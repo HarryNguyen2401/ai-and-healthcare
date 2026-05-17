@@ -1,11 +1,11 @@
 ---
-title: Welcome to AI in the journey to healthier lungs
+title: AI Segmentation Model + Attention Mechanism
 hidden: false
 ---
 > 📘 **Template:**  Delete this callout and edit this page with your content and links.
 
 <Cards>
-  {pK
+  \{pK
 
 ## Recent Releases
 
@@ -17,13 +17,13 @@ They’re fast, inexpensive, and available almost everywhere. That’s why, in m
 
 Problem Statement & Motivation
 
-Today, medical imaging stands at the core of modern healthcare. According to the OECDAccording to the World Health Organization, over two billion chest X-rays are taken every year. That makes them one of the most common diagnostic tests in the world — and one of the most powerful. From pneumonia and tuberculosis to lung cancer, these scans can literally make the difference between early treatment and a missed diagnosis. 
+Today, medical imaging stands at the core of modern healthcare. According to the OECDAccording to the World Health Organization, over two billion chest X-rays are taken every year. That makes them one of the most common diagnostic tests in the world — and one of the most powerful. From pneumonia and tuberculosis to lung cancer, these scans can literally make the difference between early treatment and a missed diagnosis.
 
 But here’s the challenge: reading X-rays images accurately isn’t an easy task. Even when X-rays are available, the early signs of disease can be so faint, so easy to miss, that they quietly escape notice. As a result, when early signs go unseen, the consequences can be devastating.
 
 Every year, nearly four million people around the world lose their lives to lung diseases; many of which could have been prevented with early detection. Yet, in countless hospitals, radiologists face overwhelming workloads, while in some remote regions, there may be only one specialist for thousands of patients. The result is a silent crisis: delays in diagnosis, missed opportunities for treatment, and lives that could have been saved.
 
- (2023), more than 3.6 billion imaging procedures are performed each year worldwide — a number that keeps rising as populations age and chronic diseases increase. However, the number of radiologists hasn’t grown at the same rate. This creates a widening gap between the number of scans that need to be read and the professionals available to interpret them.
+(2023), more than 3.6 billion imaging procedures are performed each year worldwide — a number that keeps rising as populations age and chronic diseases increase. However, the number of radiologists hasn’t grown at the same rate. This creates a widening gap between the number of scans that need to be read and the professionals available to interpret them.
 In high-income countries, this already stretches resources thin. But in low- and middle-income nations, the shortage is much more severe. The U.S. has about 100 radiologists per million people, whereas countries in Southeast Asia, such as Vietnam, have fewer than 25 per million (WHO, 2023). This imbalance doesn’t just delay diagnoses, but rather can mean the difference between early treatment and missed opportunities for care. That’s why the integration of other diagnostic tools has become not just innovative, but essential: to support doctors, ensure consistency, and make timely healthcare accessible to all.
 
 In the face of these challenges, artificial intelligence has emerged as a powerful ally in transforming medical diagnostics. Rather than replacing radiologists, AI amplifies their capabilities, which makes healthcare faster, more consistent, and more accessible than ever before.
@@ -74,7 +74,7 @@ Conclusion
 
 In this final part, I’ll briefly highlight the main outcomes of the model, and discuss what could be done to further improve the current model to an applicable usage in healthcare.
 
-The model demonstrates a strong capability in accurately segmenting lung regions from chest X-ray images. It achieves consistently high performance, with Dice coefficient, Jaccard index, and accuracy values of around 0.9, indicating close alignment between predicted and true lung areas. While the segmentation results are generally precise, slight oversegmentation can be noticed along the lung boundaries, which suggests that the model occasionally includes small non-lung regions. This issue could be reduced through post-processing steps, such as morphological filtering or boundary refinement. 
+The model demonstrates a strong capability in accurately segmenting lung regions from chest X-ray images. It achieves consistently high performance, with Dice coefficient, Jaccard index, and accuracy values of around 0.9, indicating close alignment between predicted and true lung areas. While the segmentation results are generally precise, slight oversegmentation can be noticed along the lung boundaries, which suggests that the model occasionally includes small non-lung regions. This issue could be reduced through post-processing steps, such as morphological filtering or boundary refinement.
 
 Overall, the model performs reliably across the dataset and effectively captures key lung structures. With further training, hyperparameter tuning, and optimization, it holds strong potential for real-world clinical and diagnostic applications.
 
@@ -82,12 +82,18 @@ Overall, the model performs reliably across the dataset and effectively captures
 
 Future Development
 
-<br />
+Now that we’ve evaluated the model’s current performance, let’s look ahead to the next steps. In this section, I’ll outline several directions for future development, including ways to enhance model accuracy, expand dataset diversity, and improve its readiness for real-world clinical deployment.
 
-<br />
+Looking ahead, there are several promising directions to further strengthen this model.
 
-<br />
+First, integrating additional chest X-ray datasets from diverse populations would help improve robustness and generalizability. A broader dataset ensures the model can handle variations in image quality, patient age, and disease presentation more effectively.
 
-<br />
+Next, expanding the framework to support multi-label classification could allow simultaneous assessment of multiple thoracic conditions, not just tuberculosis. This would make the model more useful in real-world diagnostic workflows.
+
+Another key focus is model transparency. By applying visual explanation methods—such as Grad-CAM or attention heatmaps—we can help clinicians understand why the AI made certain predictions. This improves interpretability and builds trust in its diagnostic decisions.
+
+Finally, continuous model refinement is essential. Through hyperparameter tuning and optimization, we can achieve a better balance between accuracy and computational efficiency, making the model faster and more practical for deployment in hospitals and smaller clinics.
+
+<Cards>
 
 <br />
