@@ -7,9 +7,7 @@ hidden: false
 <Cards>
   \{pK
 
-## Recent Releases
-
-AI In The Journey To Healthier Lungs
+## AI In The Journey To Healthier Lungs
 
 They’re fast, inexpensive, and available almost everywhere. That’s why, in many developing countries where advanced scanners like CT or MRI are rare, chest X-rays are often the only imaging tool doctors can rely on.
 
