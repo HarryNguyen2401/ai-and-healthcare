@@ -63,6 +63,15 @@ It can process large volumes of chest X-rays within minutes, dramatically reduci
 - **Frameworks**: TensorFlow / Keras
 - **Loss & Metrics**: Binary Crossentropy, Dice Coefficient, Jaccard Index
 
+## Pipeline
 
+```mermaid
+flowchart LR 
+ InpImg[Input Image] --> PreData[Preprocessed Data] 
+ PreData --> End[Encoder] 
+ End --> AttGate[Attention Gates]
+ AttGate --> Dec[Decoder]
+ Dec --> OutMap[Output Map]
+```
 
 <br />
