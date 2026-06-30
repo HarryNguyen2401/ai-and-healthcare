@@ -14,7 +14,7 @@ hidden: false
 
 ***
 
-- Problem Statement & Motivation
+- [Problem Statement & Motivation]()
 - Our Method
 - Result
 - Conclusion
@@ -42,4 +42,18 @@ Every year, nearly _four million people_ around the world lose their lives to lu
 
 <br />
 
+The motivation behind this project comes from a simple question — _how can we make lung diagnosis faster, fairer, and more consistent?_
+
+AI provides an exciting answer.
+
 In the face of these challenges, artificial intelligence has emerged as a powerful ally in transforming medical diagnostics. Rather than replacing radiologists, AI amplifies their capabilities, which makes healthcare faster, more consistent, and more accessible than ever before.
+
+It can process large volumes of chest X-rays within minutes, dramatically reducing diagnostic delays. Once trained, the system is cost-effective, making it a practical tool for smaller hospitals and rural clinics that lack specialized staff. And most importantly, AI offers consistent accuracy: it highlights lung regions and subtle abnormalities that may go unnoticed by the human eye. Together, these strengths make AI not just a piece of technology, but a bridge connecting medical expertise to where it’s needed most.
+
+<br />
+
+# Our Method
+
+***
+
+<br />
