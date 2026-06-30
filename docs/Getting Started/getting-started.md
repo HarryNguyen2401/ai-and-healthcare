@@ -67,11 +67,12 @@ It can process large volumes of chest X-rays within minutes, dramatically reduci
 
 ```mermaid
 flowchart LR 
- InpImg[Input Image] --> PreData[Preprocessed Data] 
- PreData --> End[Encoder] 
- End --> AttGate[Attention Gates]
- AttGate --> Dec[Decoder]
- Dec --> OutMap[Output Map]
+ InpImg[Input Image] ==> PreData[Preprocessed Data] 
+ PreData ==> End[Encoder] 
+ End ==> AttGate[Attention Gates]
+ AttGate ==> Dec[Decoder]
+ Dec ==> OutMap[Output Map]
+
 ```
 
 <br />
