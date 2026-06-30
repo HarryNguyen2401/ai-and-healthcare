@@ -24,9 +24,7 @@ hidden: false
 
 ***
 
-First of all, let’s delve deeper into the problems as well as the main motivation for me to initially begin this project.
-
-Now, I will talk about something we’ve all seen before in the healthcare industry — **chest X-rays**. They’re fast, inexpensive, and available almost everywhere. That’s why, in many developing countries where advanced scanners like CT or MRI are rare, chest X-rays are often the only imaging tool doctors can rely on.
+Something we’ve all seen before in the healthcare industry — **chest X-rays**. They’re fast, inexpensive, and available almost everywhere. That’s why, in many developing countries where advanced scanners like CT or MRI are rare, chest X-rays are often the only imaging tool doctors can rely on.
 
 Today, medical imaging stands at the core of modern healthcare. According to the _World Health Organization_, over 2 billion chest X-rays are taken every year. That makes them one of the most common diagnostic tests in the world — and one of the most powerful. From pneumonia and tuberculosis to lung cancer, these scans can literally make the difference between early treatment and a missed diagnosis.
 
@@ -50,7 +48,33 @@ In the face of these challenges, artificial intelligence has emerged as a powerf
 
 It can process large volumes of chest X-rays within minutes, dramatically reducing diagnostic delays. Once trained, the system is cost-effective, making it a practical tool for smaller hospitals and rural clinics that lack specialized staff. And most importantly, AI offers consistent accuracy: it highlights lung regions and subtle abnormalities that may go unnoticed by the human eye. Together, these strengths make AI not just a piece of technology, but a bridge connecting medical expertise to where it’s needed most.
 
-<br />
+# U-Net Model&#x20;
+
+***
+
+> _A deep learning architecture specifically designed for biomedical image segmentation. Introduced in 2015 by Olaf Ronneberger et al., it has become a foundational model in the field due to its effectiveness in delineating complex structures in medical images._
+
+## Architecture Overview
+
+- **Contracting path (Encoder)**: Extracts hierarchical features through convolution and downsampling.
+- **Expanding path (Decoder)**: Restores image resolution for pixel-wise segmentation.
+- **Skip connections**: Fuse low-level spatial information with high-level semantic features.
+
+![](https://files.readme.io/878cecfedcaa4830241bad40f68890cf88c63e2af907a36f6ec6f1e1ad31d8e5-image.png)
+
+### Why U-Net?
+
+U-Net is designed to work well with relatively few training images. This is particularly important in the biomedical field, where labeled data can be scarce. The model uses data augmentation techniques to enhance training and improve generalization.
+
+It's widely used for segmenting various biomedical images:
+
+| Image Type            | Application                                                                      |
+| --------------------- | -------------------------------------------------------------------------------- |
+| MRI & CT Scans        | Identifying tumors, lesions, and organ boundaries                                |
+| Histopathology images | Detecting cellular structures and classifying tissue types                       |
+| Cell Segmentation     | Tasks like identifying individual cells and their components (Microscopy images) |
+
+The architecture has been shown to achieve high accuracy and robustness in various segmentation tasks, often outperforming traditional methods. Its ability to produce precise pixel-wise predictions makes it a preferred choice for medical image analysis.
 
 # Our Method
 
@@ -72,7 +96,6 @@ flowchart LR
  End ==> AttGate[Attention Gates]
  AttGate ==> Dec[Decoder]
  Dec ==> OutMap[Output Map]
-
 ```
 
 <br />
