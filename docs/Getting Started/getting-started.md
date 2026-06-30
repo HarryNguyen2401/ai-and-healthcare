@@ -56,4 +56,13 @@ It can process large volumes of chest X-rays within minutes, dramatically reduci
 
 ***
 
+## Setup
+
+- **Language**: Python
+- **Environment**: Google Colab (GPU-enabled)
+- **Frameworks**: TensorFlow / Keras
+- **Loss & Metrics**: Binary Crossentropy, Dice Coefficient, Jaccard Index
+
+
+
 <br />
