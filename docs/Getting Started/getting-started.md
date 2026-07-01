@@ -16,6 +16,7 @@ hidden: false
 
 - [Problem Statement & Motivation]()
 - U-Net Model
+- Attention Integration in U-Net
 - Our Method
 - Result
 - Conclusion
@@ -43,11 +44,11 @@ Every year, nearly _four million people_ around the world lose their lives to lu
 
 The motivation behind this project comes from a simple question — _how can we make lung diagnosis faster, fairer, and more consistent?_
 
-AI provides an exciting answer.
+**AI provides an exciting answer.&#x20;**&#x49;n the face of these challenges, artificial intelligence has emerged as a powerful ally in transforming medical diagnostics. Rather than replacing radiologists, AI amplifies their capabilities, which makes healthcare faster, more consistent, and more accessible than ever before.
 
-In the face of these challenges, artificial intelligence has emerged as a powerful ally in transforming medical diagnostics. Rather than replacing radiologists, AI amplifies their capabilities, which makes healthcare faster, more consistent, and more accessible than ever before.
+It can process large volumes of chest X-rays within minutes, dramatically reducing diagnostic delays. Once trained, the system is cost-effective, making it a practical tool for smaller hospitals and rural clinics that lack specialized staff.&#x20;
 
-It can process large volumes of chest X-rays within minutes, dramatically reducing diagnostic delays. Once trained, the system is cost-effective, making it a practical tool for smaller hospitals and rural clinics that lack specialized staff. And most importantly, AI offers consistent accuracy: it highlights lung regions and subtle abnormalities that may go unnoticed by the human eye. Together, these strengths make AI not just a piece of technology, but a bridge connecting medical expertise to where it’s needed most.
+And most importantly, AI offers consistent accuracy: it highlights lung regions and subtle abnormalities that may go unnoticed by the human eye. Together, these strengths make AI not just a piece of technology, but a bridge connecting medical expertise to where it’s needed most.
 
 # U-Net Model&#x20;
 
@@ -76,6 +77,12 @@ It's widely used for segmenting various biomedical images:
 | Cell Segmentation     | Tasks like identifying individual cells and their components (Microscopy images) |
 
 The architecture has been shown to achieve high accuracy and robustness in various segmentation tasks, often outperforming traditional methods. Its ability to produce precise pixel-wise predictions makes it a preferred choice for medical image analysis.
+
+# Attention Integration in U-Net
+
+***
+
+<br />
 
 # Our Method
 
