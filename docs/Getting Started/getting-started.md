@@ -18,8 +18,7 @@ hidden: false
 - U-Net Model
 - Attention Integration in U-Net
 - Our Method
-- Result
-- Conclusion
+- Result & Conclusion
 - Future Development
 
 # Problem Statement & Motivation
@@ -117,24 +116,42 @@ An AG modulates the encoder features before fusion with the decoder features, su
 
 ## Pipeline
 
-```mermaid
-flowchart LR 
- InpImg[Input Image] ==> PreData[Preprocessed Data] 
- PreData ==> End[Encoder] 
- End ==> AttGate[Attention Gates]
- AttGate ==> Dec[Decoder]
- Dec ==> OutMap[Output Map]
-```
+![](https://files.readme.io/d01a50527b175e1f7127f8e49b3bc9163d1f2c754ba50c2c84585d9dca892d45-Anh_chup_Man_hinh_2026-07-02_luc_16.38.45.png)
+
+<br />
 
 ## Tested Dataset
 
 <Cards>
 > [!WARNING]
 
-**Dataset Notice:This project uses a publicly available chest X-ray dataset obtained from Kaggle for research and educational purposes only. All copyrights, ownership, and intellectual property rights remain with the original dataset creators and contributors. This repository does not aim ownership of the dataset and only includes code, documentation, and project materials developed by the author. Please refer to the original dataset source before downloading or reusing the data: 
+**Dataset Notice:This project uses a publicly available chest X-ray dataset obtained from Kaggle for research and educational purposes only. All copyrights, ownership, and intellectual property rights remain with the original dataset creators and contributors. This repository does not aim ownership of the dataset and only includes code, documentation, and project materials developed by the author. Please refer to the original dataset source b
+efore downloading or reusing the data: 
 
-Chest X-ray Dataset for Tuberculosis Segmentation**
+Chest X-ray Dataset for Tuberculosis Segmentation
 
 </Cards>
+
+<br />
+
+# Result & Conclusion
+
+***
+
+> ### Plot Training & Validation Loss Values
+
+![](https://files.readme.io/44c70187654532c300b9d08268ccd9ac0275df736688dd3535a6165c5df1c699-Anh_chup_Man_hinh_2026-07-02_luc_17.11.01.png)
+
+<br />
+
+> ### Model Predictions
+
+![](https://files.readme.io/a4d11c9e14136960c99af33a80ce3ad4658b2e838faf6785f34dbcf8127f23ef-Anh_chup_Man_hinh_2026-07-02_luc_17.14.47.png)
+
+![](https://files.readme.io/913fb88c2579e4f8365457abc997ce80530cb42b8da95f57baced647d87cce24-Anh_chup_Man_hinh_2026-07-02_luc_17.14.57.png)
+
+![](https://files.readme.io/1b291b7ea2ebde084d54d6cd07e93d5f85437b26ea68051eff377dcd46fe28cf-Anh_chup_Man_hinh_2026-07-02_luc_17.14.39.png)
+
+![](https://files.readme.io/86127714e1a056d8bcac3101aed31047a84695f5586d0c17fc51081f20308366-Anh_chup_Man_hinh_2026-07-02_luc_17.14.27.png)
 
 <br />
