@@ -82,6 +82,26 @@ The architecture has been shown to achieve high accuracy and robustness in vario
 
 ***
 
+_Attention U-Net_ is an extension of the U-Net architecture for image segmentation, distinguished by the incorporation of **attention gates** (AGs) into its skip connections.
+
+![](https://files.readme.io/d629c2aad90d4b7db1a8d79b7a39f582072440109a475ff2b43f1ca6b644db89-attention_unet-compressed-2.jpeg)
+
+<br />
+
+An AG modulates the encoder features before fusion with the decoder features, supplying a context-driven mechanism that automatically emphasizes task-relevant spatial regions and suppresses background or distractor information. This design directly addreses issues such as:
+
+1. High variability in organ morphology (e.g., pancreas, retinal vessels).&#x20;
+2. Low contrast between anatomical structures and background.
+3. The computational and design burden of multi-stage or cascaded segmentation pipelines.
+
+### Why is attention needed in the U-Net?
+
+- Focuses on the most relevant regions. Attention Gates guide the model toward important lung structures while reducing the influence of background noise.
+- Improves segmentation performance. By emphasizing meaningful features, the model converges faster and generalizes better to unseen images.
+- Suppresses irrelevant information automatically. The network learns to ignore non-essential regions without requiring additional localization modules.
+- Adapts to different anatomical structures. Attention Gates effectively capture target regions of varying shapes and sizes in medical images.
+- Enhances U-Net with minimal overhead. The attention mechanism can be integrated easily, improving sensitivity and accuracy with only a small increase in model parameters.
+
 <br />
 
 # Our Method
@@ -105,5 +125,16 @@ flowchart LR
  AttGate ==> Dec[Decoder]
  Dec ==> OutMap[Output Map]
 ```
+
+## Tested Dataset
+
+<Cards>
+> [!WARNING]
+
+**Dataset Notice:This project uses a publicly available chest X-ray dataset obtained from Kaggle for research and educational purposes only. All copyrights, ownership, and intellectual property rights remain with the original dataset creators and contributors. This repository does not aim ownership of the dataset and only includes code, documentation, and project materials developed by the author. Please refer to the original dataset source before downloading or reusing the data: 
+
+Chest X-ray Dataset for Tuberculosis Segmentation**
+
+</Cards>
 
 <br />
