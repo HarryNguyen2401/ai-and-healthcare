@@ -95,11 +95,11 @@ An AG modulates the encoder features before fusion with the decoder features, su
 
 ### Why is attention needed in the U-Net?
 
-- Focuses on the most relevant regions. Attention Gates guide the model toward important lung structures while reducing the influence of background noise.
-- Improves segmentation performance. By emphasizing meaningful features, the model converges faster and generalizes better to unseen images.
-- Suppresses irrelevant information automatically. The network learns to ignore non-essential regions without requiring additional localization modules.
-- Adapts to different anatomical structures. Attention Gates effectively capture target regions of varying shapes and sizes in medical images.
-- Enhances U-Net with minimal overhead. The attention mechanism can be integrated easily, improving sensitivity and accuracy with only a small increase in model parameters.
+- **Focuses on the most relevant regions.** Attention Gates guide the model toward important lung structures while reducing the influence of background noise.
+- **Improves segmentation performance.** By emphasizing meaningful features, the model converges faster and generalizes better to unseen images.
+- **Suppresses irrelevant information automatically.** The network learns to ignore non-essential regions without requiring additional localization modules.
+- **Adapts to different anatomical structures.&#x20;**&#x41;ttention Gates effectively capture target regions of varying shapes and sizes in medical images.
+- **Enhances U-Net with minimal overhead.** The attention mechanism can be integrated easily, improving sensitivity and accuracy with only a small increase in model parameters.
 
 <br />
 
@@ -123,10 +123,9 @@ An AG modulates the encoder features before fusion with the decoder features, su
 ## Tested Dataset
 
 <Cards>
-> [!WARNING]
+> WARNING!
 
-**Dataset Notice:This project uses a publicly available chest X-ray dataset obtained from Kaggle for research and educational purposes only. All copyrights, ownership, and intellectual property rights remain with the original dataset creators and contributors. This repository does not aim ownership of the dataset and only includes code, documentation, and project materials developed by the author. Please refer to the original dataset source b
-efore downloading or reusing the data: 
+Dataset Notice:This project uses a publicly available chest X-ray dataset obtained from Kaggle for research and educational purposes only. All copyrights, ownership, and intellectual property rights remain with the original dataset creators and contributors. This repository does not aim ownership of the dataset and only includes code, documentation, and project materials developed by the author. Please refer to the original dataset source before downloading or reusing the data: 
 
 Chest X-ray Dataset for Tuberculosis Segmentation
 
