@@ -18,6 +18,7 @@ hidden: false
 - U-Net Model
 - Attention Integration in U-Net
 - Our Method
+- Code Demo
 - Result & Conclusion
 - Future Development
 
@@ -49,11 +50,15 @@ It can process large volumes of chest X-rays within minutes, dramatically reduci
 
 And most importantly, AI offers consistent accuracy: it highlights lung regions and subtle abnormalities that may go unnoticed by the human eye. Together, these strengths make AI not just a piece of technology, but a bridge connecting medical expertise to where it’s needed most.
 
+<br />
+
 # U-Net Model&#x20;
 
 ***
 
 > _A deep learning architecture specifically designed for biomedical image segmentation. Introduced in 2015 by Olaf Ronneberger et al., it has become a foundational model in the field due to its effectiveness in delineating complex structures in medical images._
+
+<br />
 
 ## Architecture Overview
 
@@ -62,6 +67,8 @@ And most importantly, AI offers consistent accuracy: it highlights lung regions 
 - **Skip connections**: Fuse low-level spatial information with high-level semantic features.
 
 ![](https://files.readme.io/878cecfedcaa4830241bad40f68890cf88c63e2af907a36f6ec6f1e1ad31d8e5-image.png)
+
+<br />
 
 ### Why U-Net?
 
@@ -76,6 +83,8 @@ It's widely used for segmenting various biomedical images:
 | Cell Segmentation     | Tasks like identifying individual cells and their components (Microscopy images) |
 
 The architecture has been shown to achieve high accuracy and robustness in various segmentation tasks, often outperforming traditional methods. Its ability to produce precise pixel-wise predictions makes it a preferred choice for medical image analysis.
+
+<br />
 
 # Attention Integration in U-Net
 
@@ -93,6 +102,8 @@ An AG modulates the encoder features before fusion with the decoder features, su
 2. Low contrast between anatomical structures and background.
 3. The computational and design burden of multi-stage or cascaded segmentation pipelines.
 
+
+
 ### Why is attention needed in the U-Net?
 
 - **Focuses on the most relevant regions.** Attention Gates guide the model toward important lung structures while reducing the influence of background noise.
@@ -100,6 +111,14 @@ An AG modulates the encoder features before fusion with the decoder features, su
 - **Suppresses irrelevant information automatically.** The network learns to ignore non-essential regions without requiring additional localization modules.
 - **Adapts to different anatomical structures.&#x20;**&#x41;ttention Gates effectively capture target regions of varying shapes and sizes in medical images.
 - **Enhances U-Net with minimal overhead.** The attention mechanism can be integrated easily, improving sensitivity and accuracy with only a small increase in model parameters.
+
+
+
+<Callout icon="ℹ️" theme="info">
+  ### **More About Attention U-Net**
+
+  If you want to delve deeper into attention U-Nets' applications in healthcare, check out this article: [_Attention U-Net: Learning Where to Look for the Pancreas_](https://arxiv.org/abs/1804.03999)
+</Callout>
 
 <br />
 
@@ -131,6 +150,18 @@ Chest X-ray Dataset for Tuberculosis Segmentation
 
 </Cards>
 
+> _This dataset consists of&#x20;_**_704 chest X-ray images_**_&#x20;that have been curated from two sources: the&#x20;_**_Montgomery County Chest X-ray Database_**_&#x20;(USA) and the&#x20;_**_Shenzhen Chest X-ray Database_**_&#x20;(China). The images are used for training and evaluating machine learning models for&#x20;_**_tuberculosis (TB) detection._**
+>
+> _The dataset contains both&#x20;_**_tuberculosis-positive_**_&#x20;and&#x20;_**_normal&#x20;_**_chest X-rays, along with demographic details such as&#x20;_**_gender, age_**_, and&#x20;_**_county_**_&#x20;of origin. The images are accompanied by&#x20;_**_lung segmentation masks_**_&#x20;and&#x20;_**_clinical metadata_**_, which makes the dataset highly suitable for deep learning applications in medical imaging._
+
+<br />
+
+# Code Demo
+
+***
+
+<br />
+
 <br />
 
 # Result & Conclusion
@@ -141,7 +172,7 @@ Chest X-ray Dataset for Tuberculosis Segmentation
 
 ![](https://files.readme.io/44c70187654532c300b9d08268ccd9ac0275df736688dd3535a6165c5df1c699-Anh_chup_Man_hinh_2026-07-02_luc_17.11.01.png)
 
-<br />
+The model demonstrates a strong capability in accurately segmenting lung regions from chest X-ray images. It achieves consistently high performance, with Dice coefficient, Jaccard index, and accuracy values of around 0.9, indicating close alignment between predicted and true lung areas.
 
 > ### Model Predictions
 
@@ -152,5 +183,13 @@ Chest X-ray Dataset for Tuberculosis Segmentation
 ![](https://files.readme.io/1b291b7ea2ebde084d54d6cd07e93d5f85437b26ea68051eff377dcd46fe28cf-Anh_chup_Man_hinh_2026-07-02_luc_17.14.39.png)
 
 ![](https://files.readme.io/86127714e1a056d8bcac3101aed31047a84695f5586d0c17fc51081f20308366-Anh_chup_Man_hinh_2026-07-02_luc_17.14.27.png)
+
+While the segmentation results are generally precise, slight oversegmentation can be noticed along the lung boundaries, which suggests that the model occasionally includes small non-lung regions. This issue could be reduced through post-processing steps, such as morphological filtering or boundary refinement.
+
+<br />
+
+# Future Development
+
+***
 
 <br />
