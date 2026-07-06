@@ -102,7 +102,7 @@ An AG modulates the encoder features before fusion with the decoder features, su
 2. Low contrast between anatomical structures and background.
 3. The computational and design burden of multi-stage or cascaded segmentation pipelines.
 
-
+<br />
 
 ### Why is attention needed in the U-Net?
 
@@ -112,7 +112,7 @@ An AG modulates the encoder features before fusion with the decoder features, su
 - **Adapts to different anatomical structures.&#x20;**&#x41;ttention Gates effectively capture target regions of varying shapes and sizes in medical images.
 - **Enhances U-Net with minimal overhead.** The attention mechanism can be integrated easily, improving sensitivity and accuracy with only a small increase in model parameters.
 
-
+<br />
 
 <Callout icon="ℹ️" theme="info">
   ### **More About Attention U-Net**
@@ -159,6 +159,18 @@ Chest X-ray Dataset for Tuberculosis Segmentation
 # Code Demo
 
 ***
+
+> ### Importing Libraries
+
+![](https://files.readme.io/dec0355d1b7ec5f9aa35044344ccfa5b5ce11b3e36efd4068b198077e100ffc4-Anh_chup_Man_hinh_2026-07-06_luc_11.56.19.png)
+
+> ###
+
+![](https://files.readme.io/fcca8b9b1366afe206461d70f7166e70e7a4e323d8bce95623029aa54b121565-Anh_chup_Man_hinh_2026-07-06_luc_11.52.20.png)
+
+>
+
+![](https://files.readme.io/32854579898a18228bc47e607ed048397817e141b5dacc978270f07a48397f05-Anh_chup_Man_hinh_2026-07-06_luc_11.52.44.png)
 
 <br />
 
