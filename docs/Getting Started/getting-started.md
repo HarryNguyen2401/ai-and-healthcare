@@ -141,9 +141,9 @@ An AG modulates the encoder features before fusion with the decoder features, su
 
 ## Tested Dataset
 
-> WARNING!
+> \[!WARNINGư
 
-Notice:This project uses a publicly available chest X-ray dataset obtained from Kaggle for research and educational purposes only. All copyrights, ownership, and intellectual property rights remain with the original dataset creators and contributors. This repository does not aim ownership of the dataset and only includes code, documentation, and project materials developed by the author. Please refer to the original dataset source before downloading or reusing the data: 
+Notice:This project uses a publicly available chest X-ray dataset obtained from Kaggle for research and educational purposes only. All copyrights, ownership, and intellectual property rights remain with the original dataset creators and contributors. This repository does not aim ownership of the dataset and only includes code, documentation, and project materials developed by the author. Please refer to the original dataset source before downloading or reusing the data:
 
 Chest X-ray Dataset for Tuberculosis Segmentation
 
