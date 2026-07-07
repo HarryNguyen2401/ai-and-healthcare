@@ -403,14 +403,11 @@ While the segmentation results are generally precise, slight **oversegmentation*
 
 ***
 
+### Author
+
+Nguyen Phan Viet Hung
+
 <HTMLBlock>{`
-## 📜 Credits
-
-### 👨‍💻 Project Author
-
-**Nguyen Phan Viet Hung**  
-Research Assistant, Global Science Journey (GSJ)
-
 <p>
   <a href="https://github.com/HarryNguyen2401">
     <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" />
@@ -422,41 +419,6 @@ Research Assistant, Global Science Journey (GSJ)
     <img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white" />
   </a>
 </p>
-
----
-
-### 🎓 Academic Mentors
-
-This project was completed under the guidance of researchers and industry experts through the **Global Science Journey (GSJ)** program.
-
-- **Dr. Phan Duc Tri** — Nanyang Technological University (NTU), Singapore *(Lead Academic Supervisor)*
-- **M.Sc. Nguyen Thi Van Anh** — CMC University
-- **M.Sc. Nguyen Dong Hung** — VNPT Information Technology Institute (VNPTIT)
-- **Mr. Nguyen Hoai Nam** — VNPT Information Technology Institute (VNPTIT)
-- **Dr. Bui Thanh Hung** — Hanoi Oncology Hospital
-
----
-
-### 🤝 Acknowledgements
-
-Special thanks to **Global Science Journey (GSJ)** for providing the research environment, mentorship, and academic support throughout this project.
-
-I also sincerely thank all mentors and reviewers whose guidance and feedback helped improve both the technical implementation and research quality.
-
----
-
-### 📚 Resources
-
-This project builds upon several outstanding open-source resources, including:
-
-- TensorFlow & Keras
-- OpenCV
-- Attention U-Net
-- Montgomery County Chest X-ray Dataset
-- Shenzhen Hospital Chest X-ray Dataset
-- Kaggle
-
-All datasets and third-party resources remain the intellectual property of their respective owners.
 `}</HTMLBlock>
 
 <br />
