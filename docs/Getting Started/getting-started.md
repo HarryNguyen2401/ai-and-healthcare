@@ -22,7 +22,7 @@ hidden: false
 - Result & Conclusion
 - Future Development
 
-
+<br />
 
 # Problem Statement & Motivation
 
@@ -143,11 +143,19 @@ An AG modulates the encoder features before fusion with the decoder features, su
 
 ## Tested Dataset
 
-> \[!WARNING]
+<Cards>
+  <Card title="Getting Started" href="#" icon="fa-rocket">
+    New to our platform? Follow this guide to get started.
+  </Card>
 
-This project uses a publicly available chest X-ray dataset obtained from Kaggle for research and educational purposes only. All copyrights, ownership, and intellectual property rights remain with the original dataset creators and contributors. This repository does not aim ownership of the dataset and only includes code, documentation, and project materials developed by the author. Please refer to the original dataset source before downloading or reusing the data: [Chest X-ray Dataset for Tuberculosis Segmentation](https://www.kaggle.com/datasets/iamtapendu/chest-x-ray-lungs-segmentation)
+  <Card title="API Reference" href="#" icon="fa-code">
+    Explore our interactive API reference.
+  </Card>
 
-<br />
+  <Card title="Support & Community" href="#" icon="fa-comments" target="_blank">
+    Join our community or checkout our FAQ.
+  </Card>
+</Cards>
 
 <br />
 
