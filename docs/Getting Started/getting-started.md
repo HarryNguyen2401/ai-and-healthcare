@@ -14,7 +14,7 @@ hidden: false
 
 ***
 
-- [Problem Statement & Motivation]()
+- Problem Statement & Motivation
 - U-Net Model
 - Attention Integration in U-Net
 - Our Method
