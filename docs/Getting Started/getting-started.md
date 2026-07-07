@@ -154,6 +154,8 @@ Chest X-ray Dataset for Tuberculosis Segmentation
 >
 > _The dataset contains both&#x20;_**_tuberculosis-positive_**_&#x20;and&#x20;_**_normal&#x20;_**_chest X-rays, along with demographic details such as&#x20;_**_gender, age_**_, and&#x20;_**_county_**_&#x20;of origin. The images are accompanied by&#x20;_**_lung segmentation masks_**_&#x20;and&#x20;_**_clinical metadata_**_, which makes the dataset highly suitable for deep learning applications in medical imaging._
 
+![](https://files.readme.io/1d80197b5b4b8f336ae966ca928c47d5a55a9480d59812409c762be2d1d2882b-Anh_chup_Man_hinh_2026-07-07_luc_10.15.05.png)
+
 <br />
 
 # Code Demo
@@ -162,19 +164,186 @@ Chest X-ray Dataset for Tuberculosis Segmentation
 
 > ### Importing Libraries
 
-![](https://files.readme.io/dec0355d1b7ec5f9aa35044344ccfa5b5ce11b3e36efd4068b198077e100ffc4-Anh_chup_Man_hinh_2026-07-06_luc_11.56.19.png)
+```text
+import kagglehub
+iamtapendu_chest_x_ray_lungs_segmentation_path = kagglehub.dataset_download('iamtapendu/chest-x-ray-lungs-segmentation')
+iamtapendu_lungs_segmentation_using_u_net_architecture_path = kagglehub.notebook_output_download('iamtapendu/lungs-segmentation-using-u-net-architecture')
 
-> ###
+print('Data source import complete.')
 
-![](https://files.readme.io/fcca8b9b1366afe206461d70f7166e70e7a4e323d8bce95623029aa54b121565-Anh_chup_Man_hinh_2026-07-06_luc_11.52.20.png)
+!pip install opendatasets --quiet
+import tensorflow as tf
+from tensorflow import keras
+from tensorflow.keras import layers, models, metrics
+from tensorflow.keras.utils import Sequence
+from tensorflow.keras.callbacks import ModelCheckpoint
+from google.colab import files, drive
 
->
+import cv2
+from cv2 import imread, resize
+from scipy.ndimage import label, find_objects
 
-![](https://files.readme.io/32854579898a18228bc47e607ed048397817e141b5dacc978270f07a48397f05-Anh_chup_Man_hinh_2026-07-06_luc_11.52.44.png)
+import numpy as np
+from sklearn.model_selection import train_test_split
+
+import matplotlib.pyplot as plt
+import seaborn as sns
+from tqdm import tqdm
+
+import os
+import warnings
+from tensorflow.keras.layers import Conv2D, UpSampling2D, Activation, Add, Multiply
+warnings.filterwarnings('ignore')
+
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
+print(tf.config.list_physical_devices('GPU'))
+#Download dataset
+import opendatasets as opendatasets
+dataset_url = "https://www.kaggle.com/datasets/iamtapendu/chest-x-ray-lungs-segmentation"
+opendatasets.download(dataset_url, data_dir="/content")
+
+#Set paths after download
+dataset_dir = '/content/chest-x-ray-lungs-segmentation'
+IMG_PATH = os.path.join(dataset_dir, 'Chest-X-Ray', 'Chest-X-Ray', 'image')
+MSK_PATH = os.path.join(dataset_dir, 'Chest-X-Ray', 'Chest-X-Ray', 'mask')
+METADATA_PATH = os.path.join(dataset_dir, 'MetaData.csv')
+
+##PATHS
+#IMG_PATH = '/kaggle/input/chest-x-ray-segmentation/Chest-X-Ray/Chest-X-Ray/image/'
+#MSK_PATH = '/kaggle/input/chest-x-ray-segmentation/Chest-X-Ray/Chest-X-Ray/mask/'
+```
+
+###
+
+> ### Building The Model
+
+```text
+# from tensorflow.keras.layers import Conv2D, UpSampling2D, Activation, Add, Multiply
+
+def attention_gate(x, g, inter_channels):
+
+    theta_x = Conv2D(inter_channels, kernel_size=1, strides=1, padding='same')(x)
+    theta_x = layers.BatchNormalization()(theta_x)
+    phi_g = Conv2D(inter_channels, kernel_size=1, strides=1, padding='same')(g)
+    phi_g = layers.BatchNormalization()(phi_g)
+
+    if theta_x.shape[1] != phi_g.shape[1] or theta_x.shape[2] != phi_g.shape[2]:
+        phi_g = UpSampling2D(size=(theta_x.shape[1] // phi_g.shape[1],
+                                   theta_x.shape[2] // phi_g.shape[2]),
+                             interpolation='bilinear')(phi_g)
+
+    add_xg = Add()([theta_x, phi_g])
+    act_xg = Activation('relu')(add_xg)
+    psi = Conv2D(1, kernel_size=1, padding='same')(act_xg)
+    psi = Activation('sigmoid')(psi)
+    attn_out = Multiply()([x, psi])
+    return attn_out
+
+def conv_block(x, filters):
+    x = layers.Conv2D(filters, (3,3), activation='relu', padding='same')(x)
+    x = layers.BatchNormalization()(x)
+    x = layers.Conv2D(filters, (3,3), activation='relu', padding='same')(x)
+    x = layers.BatchNormalization()(x)
+    return x
+
+def decoder_block(x, skip, filters):
+    x = layers.Conv2DTranspose(filters, (2,2), strides=(2,2), padding='same')(x)
+    attn = attention_gate(skip, x, inter_channels=filters//2)
+    x = layers.concatenate([x, attn])
+    x = conv_block(x, filters)
+    return x
+
+    # Attention U-Net Model
+def unet_with_attention(input_shape, num_classes=1):
+    inputs = layers.Input(shape=input_shape)
+
+    conv1 = conv_block(inputs, 32)
+    pool1 = layers.MaxPooling2D((2,2))(conv1)
+
+    conv2 = conv_block(pool1, 64)
+    pool2 = layers.MaxPooling2D((2,2))(conv2)
+
+    conv3 = conv_block(pool2, 128)
+    pool3 = layers.MaxPooling2D((2,2))(conv3)
+
+    conv4 = conv_block(pool3, 256)
+    conv6 = decoder_block(conv4, conv3, 128)
+    conv7 = decoder_block(conv6, conv2, 64)
+    conv8 = decoder_block(conv7, conv1, 32)
+
+    outputs = layers.Conv2D(num_classes, (1,1), activation='sigmoid')(conv8)
+
+    model = models.Model(inputs=inputs, outputs=outputs)
+    return model
+
+    # Jaccard Index Metric
+def jaccard_index(y_true, y_pred, smooth=100):
+    """Calculates the Jaccard index (IoU), useful for evaluating the model's performance."""
+    y_true_f = tf.reshape(tf.cast(y_true, tf.float32), [-1])
+    y_pred_f = tf.reshape(tf.cast(y_pred, tf.float32), [-1])
+    intersection = tf.reduce_sum(y_true_f * y_pred_f)
+    total = tf.reduce_sum(y_true_f) + tf.reduce_sum(y_pred_f) - intersection
+    return (intersection + smooth) / (total + smooth)
+
+    # Dice Coefficient Metric
+def dice_coefficient(y_true, y_pred, smooth=1):
+    y_true_f = tf.reshape(tf.cast(y_true, tf.float32), [-1])
+    y_pred_f = tf.reshape(tf.cast(y_pred, tf.float32), [-1])
+
+    intersection = tf.reduce_sum(y_true_f * y_pred_f)
+
+    return (2. * intersection + smooth) / (tf.reduce_sum(y_true_f) + tf.reduce_sum(y_pred_f) + smooth)
+
+model = unet_with_attention(input_shape=(256, 256, 1))
+model.compile(optimizer='adam',
+              loss='binary_crossentropy',
+              metrics=['accuracy',dice_coefficient,jaccard_index])
+```
 
 <br />
 
-<br />
+> ### Showcasing The Result
+
+```text
+imgs, msks  = val_data.__getitem__(1)
+
+for img,msk in zip(imgs,msks):
+    img = np.expand_dims(img, axis=0)
+    pred = (np.squeeze(model.predict(img,verbose=0))*255).astype(np.uint8)
+    img = (np.squeeze(img) * 255).astype(np.uint8)
+    msk = (msk*255).astype(np.uint8)
+
+    # Convert grayscale image to RGB
+    img= cv2.cvtColor(img, cv2.COLOR_GRAY2RGB)
+    msk = cv2.cvtColor(msk, cv2.COLOR_GRAY2RGB)
+    pred = cv2.cvtColor(pred, cv2.COLOR_GRAY2RGB)
+
+    plt.figure(figsize=(12,4))
+
+    plt.subplot(131)
+    plt.imshow(img)
+    plt.title('Image')
+    plt.yticks([])
+    plt.xticks([])
+    plt.box(False)
+
+    plt.subplot(132)
+    plt.imshow(get_colored_mask(img,msk))
+    plt.title('Mask (Actual)')
+    plt.yticks([])
+    plt.xticks([])
+    plt.box(False)
+
+    plt.subplot(133)
+    plt.imshow(get_colored_mask(img,pred,color = [255,30,0]))
+    plt.title('Mask (Prediction)')
+    plt.yticks([])
+    plt.xticks([])
+    plt.box(False)
+
+    plt.tight_layout()
+    plt.show()
+```
 
 # Result & Conclusion
 
@@ -186,6 +355,8 @@ Chest X-ray Dataset for Tuberculosis Segmentation
 
 The model demonstrates a strong capability in accurately segmenting lung regions from chest X-ray images. It achieves consistently high performance, with Dice coefficient, Jaccard index, and accuracy values of around 0.9, indicating close alignment between predicted and true lung areas.
 
+<br />
+
 > ### Model Predictions
 
 ![](https://files.readme.io/a4d11c9e14136960c99af33a80ce3ad4658b2e838faf6785f34dbcf8127f23ef-Anh_chup_Man_hinh_2026-07-02_luc_17.14.47.png)
@@ -196,12 +367,19 @@ The model demonstrates a strong capability in accurately segmenting lung regions
 
 ![](https://files.readme.io/86127714e1a056d8bcac3101aed31047a84695f5586d0c17fc51081f20308366-Anh_chup_Man_hinh_2026-07-02_luc_17.14.27.png)
 
-While the segmentation results are generally precise, slight oversegmentation can be noticed along the lung boundaries, which suggests that the model occasionally includes small non-lung regions. This issue could be reduced through post-processing steps, such as morphological filtering or boundary refinement.
+While the segmentation results are generally precise, slight **oversegmentation** can be noticed along the lung boundaries, which suggests that the model occasionally includes small non-lung regions. This issue could be reduced through post-processing steps, such as morphological filtering or boundary refinement.
 
 <br />
 
 # Future Development
 
 ***
+
+**Looking ahead, there are several promising directions to further strengthen this model.**
+
+- Integrate more chest X-ray datasets to improve robustness
+- Extend to multi-label classification & assessment
+- Visual explanation methods: improve model transparency & clinician trust
+- Model refinement to balance accuracy & efficiency
 
 <br />
