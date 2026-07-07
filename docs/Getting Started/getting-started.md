@@ -10,7 +10,7 @@ excerpt: >-
   future clinical applications.
 hidden: false
 ---
-# Table of Contents
+# :book: Table of Contents
 
 ***
 
@@ -22,9 +22,9 @@ hidden: false
 - Result & Conclusion
 - Future Development
 
-<br />
+![](https://files.readme.io/c9d1802a9e23ead1ba5fb12c37992c4465cec8882928095ee17fa17ac283d130-Screenshot_2026-07-07_223319.png)
 
-# Problem Statement & Motivation
+# :herb:Problem Statement & Motivation
 
 ***
 
@@ -52,19 +52,13 @@ It can process large volumes of chest X-rays within minutes, dramatically reduci
 
 And most importantly, AI offers consistent accuracy: it highlights lung regions and subtle abnormalities that may go unnoticed by the human eye. Together, these strengths make AI not just a piece of technology, but a bridge connecting medical expertise to where it’s needed most.
 
-<br />
+![](https://files.readme.io/f933ee27cee745109d73e67d6a3a3a5cdf3312697697ae1495e600682d74a65e-Screenshot_2026-07-07_223319.png)
 
-<br />
-
-<br />
-
-# U-Net Model&#x20;
+# :robot: U-Net Model&#x20;
 
 ***
 
 > _A deep learning architecture specifically designed for biomedical image segmentation. Introduced in 2015 by Olaf Ronneberger et al., it has become a foundational model in the field due to its effectiveness in delineating complex structures in medical images._
-
-<br />
 
 ## Architecture Overview
 
@@ -90,9 +84,9 @@ It's widely used for segmenting various biomedical images:
 
 The architecture has been shown to achieve high accuracy and robustness in various segmentation tasks, often outperforming traditional methods. Its ability to produce precise pixel-wise predictions makes it a preferred choice for medical image analysis.
 
-<br />
+![](https://files.readme.io/cd1c3e08d62547a199bf8e28e83842421d7c6d2ae46cefaf471fea48b6dbdbae-Screenshot_2026-07-07_223319.png)
 
-# Attention Integration in U-Net
+# :brain: Attention Integration in U-Net
 
 ***
 
@@ -126,9 +120,9 @@ An AG modulates the encoder features before fusion with the decoder features, su
   If you want to delve deeper into attention U-Nets' applications in healthcare, check out this article: [_Attention U-Net: Learning Where to Look for the Pancreas_](https://arxiv.org/abs/1804.03999)
 </Callout>
 
-<br />
+![](https://files.readme.io/11fe18836b4fb5a876092a10574e4654e825b8a5d74ecbe53b03316d8b76f0ec-Screenshot_2026-07-07_223319.png)
 
-# Our Method
+# :wrench:Our Method
 
 ***
 
@@ -152,7 +146,7 @@ An AG modulates the encoder features before fusion with the decoder features, su
 <Callout icon="⚠️" theme="info">
   ### IMPORTANT!
 
-  **This project uses a publicly available chest X-ray dataset obtained from Kaggle for research and educational purposes only. All copyrights, ownership, and intellectual property rights remain with the original dataset creators and contributors.&#x20;**
+  **This project uses a publicly available chest X-ray dataset obtained from Kaggle for  educational purposes only. All copyrights, ownership, and intellectual property rights remain with the original dataset creator and contributor.&#x20;**
 
   Please refer to the original dataset source before downloading or reusing the data: [Chest X-ray Dataset for Tuberculosis Segmentation](https://www.kaggle.com/datasets/iamtapendu/chest-x-ray-lungs-segmentation)
 </Callout>
@@ -167,9 +161,9 @@ An AG modulates the encoder features before fusion with the decoder features, su
 
 <br />
 
-<br />
+![](https://files.readme.io/35cbd8e088f5c35f1293c2e28a2e670a7d77511ff6e9b350ad902789b70f5051-Screenshot_2026-07-07_223319.png)
 
-# Code Demo
+# :computer:Code Demo
 
 ***
 
@@ -356,9 +350,9 @@ for img,msk in zip(imgs,msks):
     plt.show()
 ```
 
-<br />
+![](https://files.readme.io/162749768ab6887df0b9ae923b7e1dd0cf0550d45b10c502afde4c3b81062ad5-Screenshot_2026-07-07_223319.png)
 
-# Result & Conclusion
+# :page_with_curl:Result & Conclusion
 
 ***
 
@@ -382,9 +376,9 @@ The model demonstrates a strong capability in accurately segmenting lung regions
 
 While the segmentation results are generally precise, slight **oversegmentation** can be noticed along the lung boundaries, which suggests that the model occasionally includes small non-lung regions. This issue could be reduced through post-processing steps, such as morphological filtering or boundary refinement.
 
-<br />
+![](https://files.readme.io/d1c9ccd547aa45d8633d57af9f08313f4b62a4b583754e6399233c050890e794-Screenshot_2026-07-07_223319.png)
 
-# Future Development
+# :mag:Future Development
 
 ***
 
@@ -397,9 +391,9 @@ While the segmentation results are generally precise, slight **oversegmentation*
 
 <br />
 
-<br />
+![](https://files.readme.io/01ac03ca2ba50b6bc3b1124b1e660ee3cbe8f41c349f024613ea309710678c2f-Screenshot_2026-07-07_223319.png)
 
-# Credits
+# :handshake:Credits
 
 ***
 
