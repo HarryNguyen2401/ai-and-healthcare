@@ -403,7 +403,7 @@ While the segmentation results are generally precise, slight **oversegmentation*
 
 ***
 
-### Author
+### Author&#x20;
 
 Nguyen Phan Viet Hung
 
@@ -421,6 +421,16 @@ Nguyen Phan Viet Hung
 </p>
 `}</HTMLBlock>
 
-<br />
+### Contributor
+
+_This project was supervised by:_
+
+> _Dr. Phan Duc Tri_ _(Nanyang Technological University, Singapore)_
+>
+> Email: [phanductribkhcm@gmail.com](phanductribkhcm@gmail.com "phanductribkhcm@gmail.com")
+
+_&#x20;and several industry experts from the&#x20;_**_Global Science Journey (GSJ)_**_&#x20;program._
+
+![](https://files.readme.io/6807b6411faf670967ce24baae4123fd88a308de08023d3a277ca8931ba52733-images_1.jpg)
 
 <br />
