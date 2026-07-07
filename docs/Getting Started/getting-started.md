@@ -22,6 +22,8 @@ hidden: false
 - Result & Conclusion
 - Future Development
 
+
+
 # Problem Statement & Motivation
 
 ***
@@ -141,11 +143,13 @@ An AG modulates the encoder features before fusion with the decoder features, su
 
 ## Tested Dataset
 
-> \[!WARNINGư
+> \[!WARNING]
 
-Notice:This project uses a publicly available chest X-ray dataset obtained from Kaggle for research and educational purposes only. All copyrights, ownership, and intellectual property rights remain with the original dataset creators and contributors. This repository does not aim ownership of the dataset and only includes code, documentation, and project materials developed by the author. Please refer to the original dataset source before downloading or reusing the data:
+This project uses a publicly available chest X-ray dataset obtained from Kaggle for research and educational purposes only. All copyrights, ownership, and intellectual property rights remain with the original dataset creators and contributors. This repository does not aim ownership of the dataset and only includes code, documentation, and project materials developed by the author. Please refer to the original dataset source before downloading or reusing the data: [Chest X-ray Dataset for Tuberculosis Segmentation](https://www.kaggle.com/datasets/iamtapendu/chest-x-ray-lungs-segmentation)
 
-Chest X-ray Dataset for Tuberculosis Segmentation
+<br />
+
+<br />
 
 > _This dataset consists of&#x20;_**_704 chest X-ray images_**_&#x20;that have been curated from two sources: the&#x20;_**_Montgomery County Chest X-ray Database_**_&#x20;(USA) and the&#x20;_**_Shenzhen Chest X-ray Database_**_&#x20;(China). The images are used for training and evaluating machine learning models for&#x20;_**_tuberculosis (TB) detection._**
 >
