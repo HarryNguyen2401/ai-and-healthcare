@@ -54,6 +54,10 @@ And most importantly, AI offers consistent accuracy: it highlights lung regions 
 
 <br />
 
+<br />
+
+<br />
+
 # U-Net Model&#x20;
 
 ***
@@ -143,19 +147,15 @@ An AG modulates the encoder features before fusion with the decoder features, su
 
 ## Tested Dataset
 
-<Cards>
-  <Card title="Getting Started" href="#" icon="fa-rocket">
-    New to our platform? Follow this guide to get started.
-  </Card>
+<br />
 
-  <Card title="API Reference" href="#" icon="fa-code">
-    Explore our interactive API reference.
-  </Card>
+<Callout icon="⚠️" theme="info">
+  ### IMPORTANT!
 
-  <Card title="Support & Community" href="#" icon="fa-comments" target="_blank">
-    Join our community or checkout our FAQ.
-  </Card>
-</Cards>
+  **This project uses a publicly available chest X-ray dataset obtained from Kaggle for research and educational purposes only. All copyrights, ownership, and intellectual property rights remain with the original dataset creators and contributors.&#x20;**
+
+  Please refer to the original dataset source before downloading or reusing the data: [Chest X-ray Dataset for Tuberculosis Segmentation](https://www.kaggle.com/datasets/iamtapendu/chest-x-ray-lungs-segmentation)
+</Callout>
 
 <br />
 
@@ -164,6 +164,8 @@ An AG modulates the encoder features before fusion with the decoder features, su
 > _The dataset contains both&#x20;_**_tuberculosis-positive_**_&#x20;and&#x20;_**_normal&#x20;_**_chest X-rays, along with demographic details such as&#x20;_**_gender, age_**_, and&#x20;_**_county_**_&#x20;of origin. The images are accompanied by&#x20;_**_lung segmentation masks_**_&#x20;and&#x20;_**_clinical metadata_**_, which makes the dataset highly suitable for deep learning applications in medical imaging._
 
 ![](https://files.readme.io/1d80197b5b4b8f336ae966ca928c47d5a55a9480d59812409c762be2d1d2882b-Anh_chup_Man_hinh_2026-07-07_luc_10.15.05.png)
+
+<br />
 
 <br />
 
@@ -401,9 +403,61 @@ While the segmentation results are generally precise, slight **oversegmentation*
 
 ***
 
-### Author
+<HTMLBlock>{`
+## 📜 Credits
 
-Nguyen Phan Viet Hung
+### 👨‍💻 Project Author
+
+**Nguyen Phan Viet Hung**  
+Research Assistant, Global Science Journey (GSJ)
+
+<p>
+  <a href="https://github.com/HarryNguyen2401">
+    <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" />
+  </a>
+  <a href="www.linkedin.com/in/hungphanvietnguyen">
+    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" />
+  </a>
+  <a href="viethung.mva@gmail.com">
+    <img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white" />
+  </a>
+</p>
+
+---
+
+### 🎓 Academic Mentors
+
+This project was completed under the guidance of researchers and industry experts through the **Global Science Journey (GSJ)** program.
+
+- **Dr. Phan Duc Tri** — Nanyang Technological University (NTU), Singapore *(Lead Academic Supervisor)*
+- **M.Sc. Nguyen Thi Van Anh** — CMC University
+- **M.Sc. Nguyen Dong Hung** — VNPT Information Technology Institute (VNPTIT)
+- **Mr. Nguyen Hoai Nam** — VNPT Information Technology Institute (VNPTIT)
+- **Dr. Bui Thanh Hung** — Hanoi Oncology Hospital
+
+---
+
+### 🤝 Acknowledgements
+
+Special thanks to **Global Science Journey (GSJ)** for providing the research environment, mentorship, and academic support throughout this project.
+
+I also sincerely thank all mentors and reviewers whose guidance and feedback helped improve both the technical implementation and research quality.
+
+---
+
+### 📚 Resources
+
+This project builds upon several outstanding open-source resources, including:
+
+- TensorFlow & Keras
+- OpenCV
+- Attention U-Net
+- Montgomery County Chest X-ray Dataset
+- Shenzhen Hospital Chest X-ray Dataset
+- Kaggle
+
+All datasets and third-party resources remain the intellectual property of their respective owners.
+`}</HTMLBlock>
 
 <br />
 
