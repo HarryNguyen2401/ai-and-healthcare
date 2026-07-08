@@ -208,6 +208,8 @@ The `kagglehub` package automatically downloads the dataset into the Colab envir
 
 ![](https://files.readme.io/06bcdfc58a098eea9bf9a65112406b6ad6be25dc93a67bad7a7edb3b4a8f6977-Screenshot_2026-07-08_122629.png)
 
+<br />
+
 > ### Building The Model
 
 ### Attention Gate Structure
@@ -226,13 +228,35 @@ attn_out = Multiply()([x, psi])
 
 The encoder feature map `x` and decoder gating signal `g` are combined to generate an attention mask. This mask assigns higher weights to important anatomical structures and suppresses less relevant regions before feature fusion.
 
-<br />
-
 ### Attention U-Net&#x20;
 
-<br />
+```text
+def unet_with_attention(input_shape, num_classes=1):
+    inputs = layers.Input(shape=input_shape)
+
+    conv1 = conv_block(inputs, 32)
+    pool1 = layers.MaxPooling2D((2,2))(conv1)
+
+    conv2 = conv_block(pool1, 64)
+    pool2 = layers.MaxPooling2D((2,2))(conv2)
+
+    conv3 = conv_block(pool2, 128)
+    pool3 = layers.MaxPooling2D((2,2))(conv3)
+
+    conv4 = conv_block(pool3, 256)
+
+    conv6 = decoder_block(conv4, conv3, 128)
+    conv7 = decoder_block(conv6, conv2, 64)
+    conv8 = decoder_block(conv7, conv1, 32)
+```
+
+The encoder progressively compresses the input image into rich feature representations, while the decoder restores spatial resolution to produce the final lung mask.&#x20;
+
+The `decoder_block()` combines **skip connections** with **Attention Gates**, allowing the network to recover fine anatomical details while filtering out irrelevant background information.
 
 ![](https://files.readme.io/d25f18b6463683c394aa37cf9f9633fb3f2515630a8e2f697b68e982aafbd662-Screenshot_2026-07-08_122629.png)
+
+<br />
 
 > ### Showcasing The Result
 
