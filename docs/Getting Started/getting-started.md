@@ -15,6 +15,7 @@ hidden: false
 ***
 
 - Problem Statement & Motivation
+- Prerequisites
 - U-Net Model
 - Attention Integration in U-Net
 - Our Method
@@ -23,6 +24,32 @@ hidden: false
 - Future Development
 
 ![](https://files.readme.io/c9d1802a9e23ead1ba5fb12c37992c4465cec8882928095ee17fa17ac283d130-Screenshot_2026-07-07_223319.png)
+
+<br />
+
+# :file_folder: Prerequisites
+
+***
+
+![Python](https://img.shields.io/badge/Python-3.11-3776AB?style=for-the-badge\&logo=python\&logoColor=white)
+
+![Google Colab](https://img.shields.io/badge/Google-Colab-F9AB00?style=for-the-badge\&logo=googlecolab\&logoColor=white)
+
+![NumPy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge\&logo=numpy\&logoColor=white)
+
+![Matplotlib](https://img.shields.io/badge/Matplotlib-11557C?style=for-the-badge)
+
+<br />
+
+This project builds upon several outstanding open-source resources, including:
+
+- TensorFlow & Keras
+- Attention U-Net
+- Montgomery County Chest X-ray Dataset
+- Shenzhen Hospital Chest X-ray Dataset
+- Kaggle
+
+![](https://files.readme.io/74e363cab33857cbf033f8b4fbb842e1f39902edf2feac41f5d072994fc6eaf8-Screenshot_2026-07-07_223319.png)
 
 # :herb:Problem Statement & Motivation
 
@@ -361,8 +388,6 @@ for img,msk in zip(imgs,msks):
 ![](https://files.readme.io/44c70187654532c300b9d08268ccd9ac0275df736688dd3535a6165c5df1c699-Anh_chup_Man_hinh_2026-07-02_luc_17.11.01.png)
 
 The model demonstrates a strong capability in accurately segmenting lung regions from chest X-ray images. It achieves consistently high performance, with Dice coefficient, Jaccard index, and accuracy values of around 0.9, indicating close alignment between predicted and true lung areas.
-
-<br />
 
 > ### Model Predictions
 
