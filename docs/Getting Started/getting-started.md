@@ -258,47 +258,36 @@ The `decoder_block()` combines **skip connections** with **Attention Gates**, al
 
 <br />
 
-> ### Showcasing The Result
+> ### Running Inference
+
+After training, the model predicts a binary lung mask for each chest X-ray image.
 
 ```text
-imgs, msks  = val_data.__getitem__(1)
+pred = model.predict(img, verbose=0)
 
-for img,msk in zip(imgs,msks):
-    img = np.expand_dims(img, axis=0)
-    pred = (np.squeeze(model.predict(img,verbose=0))*255).astype(np.uint8)
-    img = (np.squeeze(img) * 255).astype(np.uint8)
-    msk = (msk*255).astype(np.uint8)
+img  = cv2.cvtColor(img, cv2.COLOR_GRAY2RGB)
+pred = cv2.cvtColor(pred, cv2.COLOR_GRAY2RGB)
+```
 
-    # Convert grayscale image to RGB
-    img= cv2.cvtColor(img, cv2.COLOR_GRAY2RGB)
-    msk = cv2.cvtColor(msk, cv2.COLOR_GRAY2RGB)
-    pred = cv2.cvtColor(pred, cv2.COLOR_GRAY2RGB)
+The predicted segmentation mask is generated using `model.predict()`, then converted into a visualization-friendly format for comparison with the original image and the ground-truth annotation.
 
-    plt.figure(figsize=(12,4))
+![](https://files.readme.io/38ab92d86b76f0ba966a9e6aacffaaaaeafdbe9a03266f25cb2942b7831e7a0a-Screenshot_2026-07-08_122629.png)
 
-    plt.subplot(131)
-    plt.imshow(img)
-    plt.title('Image')
-    plt.yticks([])
-    plt.xticks([])
-    plt.box(False)
+<br />
 
-    plt.subplot(132)
-    plt.imshow(get_colored_mask(img,msk))
-    plt.title('Mask (Actual)')
-    plt.yticks([])
-    plt.xticks([])
-    plt.box(False)
+> ### Visualizing the Results
 
-    plt.subplot(133)
-    plt.imshow(get_colored_mask(img,pred,color = [255,30,0]))
-    plt.title('Mask (Prediction)')
-    plt.yticks([])
-    plt.xticks([])
-    plt.box(False)
+Finally, the original image, ground-truth mask, and predicted mask are displayed side by side for qualitative evaluation.
 
-    plt.tight_layout()
-    plt.show()
+```text
+plt.subplot(131)
+plt.imshow(img)
+
+plt.subplot(132)
+plt.imshow(msk)
+
+plt.subplot(133)
+plt.imshow(pred)
 ```
 
 ![](https://files.readme.io/162749768ab6887df0b9ae923b7e1dd0cf0550d45b10c502afde4c3b81062ad5-Screenshot_2026-07-07_223319.png)
