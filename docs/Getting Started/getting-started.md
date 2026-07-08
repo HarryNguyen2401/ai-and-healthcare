@@ -190,145 +190,51 @@ An AG modulates the encoder features before fusion with the decoder features, su
 
 ***
 
-> ### Importing Libraries
+Rather than presenting the complete notebook, this section highlights several key components of the implementation to illustrate how the model was built and evaluated.
+
+> ### Loading Dependencies & Dataset
 
 ```text
 import kagglehub
-iamtapendu_chest_x_ray_lungs_segmentation_path = kagglehub.dataset_download('iamtapendu/chest-x-ray-lungs-segmentation')
-iamtapendu_lungs_segmentation_using_u_net_architecture_path = kagglehub.notebook_output_download('iamtapendu/lungs-segmentation-using-u-net-architecture')
-
-print('Data source import complete.')
-
-!pip install opendatasets --quiet
 import tensorflow as tf
 from tensorflow import keras
-from tensorflow.keras import layers, models, metrics
-from tensorflow.keras.utils import Sequence
-from tensorflow.keras.callbacks import ModelCheckpoint
-from google.colab import files, drive
 
-import cv2
-from cv2 import imread, resize
-from scipy.ndimage import label, find_objects
-
-import numpy as np
-from sklearn.model_selection import train_test_split
-
-import matplotlib.pyplot as plt
-import seaborn as sns
-from tqdm import tqdm
-
-import os
-import warnings
-from tensorflow.keras.layers import Conv2D, UpSampling2D, Activation, Add, Multiply
-warnings.filterwarnings('ignore')
-
-os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
-print(tf.config.list_physical_devices('GPU'))
-#Download dataset
-import opendatasets as opendatasets
-dataset_url = "https://www.kaggle.com/datasets/iamtapendu/chest-x-ray-lungs-segmentation"
-opendatasets.download(dataset_url, data_dir="/content")
-
-#Set paths after download
-dataset_dir = '/content/chest-x-ray-lungs-segmentation'
-IMG_PATH = os.path.join(dataset_dir, 'Chest-X-Ray', 'Chest-X-Ray', 'image')
-MSK_PATH = os.path.join(dataset_dir, 'Chest-X-Ray', 'Chest-X-Ray', 'mask')
-METADATA_PATH = os.path.join(dataset_dir, 'MetaData.csv')
-
-##PATHS
-#IMG_PATH = '/kaggle/input/chest-x-ray-segmentation/Chest-X-Ray/Chest-X-Ray/image/'
-#MSK_PATH = '/kaggle/input/chest-x-ray-segmentation/Chest-X-Ray/Chest-X-Ray/mask/'
+dataset_path = kagglehub.dataset_download(
+    "iamtapendu/chest-x-ray-lungs-segmentation"
+)
 ```
 
-###
+The `kagglehub` package automatically downloads the dataset into the Colab environment, while `tensorflow` and `keras` provide the core framework for building and training the segmentation model.
+
+![](https://files.readme.io/06bcdfc58a098eea9bf9a65112406b6ad6be25dc93a67bad7a7edb3b4a8f6977-Screenshot_2026-07-08_122629.png)
 
 > ### Building The Model
 
-```text
-# from tensorflow.keras.layers import Conv2D, UpSampling2D, Activation, Add, Multiply
-
-def attention_gate(x, g, inter_channels):
-
-    theta_x = Conv2D(inter_channels, kernel_size=1, strides=1, padding='same')(x)
-    theta_x = layers.BatchNormalization()(theta_x)
-    phi_g = Conv2D(inter_channels, kernel_size=1, strides=1, padding='same')(g)
-    phi_g = layers.BatchNormalization()(phi_g)
-
-    if theta_x.shape[1] != phi_g.shape[1] or theta_x.shape[2] != phi_g.shape[2]:
-        phi_g = UpSampling2D(size=(theta_x.shape[1] // phi_g.shape[1],
-                                   theta_x.shape[2] // phi_g.shape[2]),
-                             interpolation='bilinear')(phi_g)
-
-    add_xg = Add()([theta_x, phi_g])
-    act_xg = Activation('relu')(add_xg)
-    psi = Conv2D(1, kernel_size=1, padding='same')(act_xg)
-    psi = Activation('sigmoid')(psi)
-    attn_out = Multiply()([x, psi])
-    return attn_out
-
-def conv_block(x, filters):
-    x = layers.Conv2D(filters, (3,3), activation='relu', padding='same')(x)
-    x = layers.BatchNormalization()(x)
-    x = layers.Conv2D(filters, (3,3), activation='relu', padding='same')(x)
-    x = layers.BatchNormalization()(x)
-    return x
-
-def decoder_block(x, skip, filters):
-    x = layers.Conv2DTranspose(filters, (2,2), strides=(2,2), padding='same')(x)
-    attn = attention_gate(skip, x, inter_channels=filters//2)
-    x = layers.concatenate([x, attn])
-    x = conv_block(x, filters)
-    return x
-
-    # Attention U-Net Model
-def unet_with_attention(input_shape, num_classes=1):
-    inputs = layers.Input(shape=input_shape)
-
-    conv1 = conv_block(inputs, 32)
-    pool1 = layers.MaxPooling2D((2,2))(conv1)
-
-    conv2 = conv_block(pool1, 64)
-    pool2 = layers.MaxPooling2D((2,2))(conv2)
-
-    conv3 = conv_block(pool2, 128)
-    pool3 = layers.MaxPooling2D((2,2))(conv3)
-
-    conv4 = conv_block(pool3, 256)
-    conv6 = decoder_block(conv4, conv3, 128)
-    conv7 = decoder_block(conv6, conv2, 64)
-    conv8 = decoder_block(conv7, conv1, 32)
-
-    outputs = layers.Conv2D(num_classes, (1,1), activation='sigmoid')(conv8)
-
-    model = models.Model(inputs=inputs, outputs=outputs)
-    return model
-
-    # Jaccard Index Metric
-def jaccard_index(y_true, y_pred, smooth=100):
-    """Calculates the Jaccard index (IoU), useful for evaluating the model's performance."""
-    y_true_f = tf.reshape(tf.cast(y_true, tf.float32), [-1])
-    y_pred_f = tf.reshape(tf.cast(y_pred, tf.float32), [-1])
-    intersection = tf.reduce_sum(y_true_f * y_pred_f)
-    total = tf.reduce_sum(y_true_f) + tf.reduce_sum(y_pred_f) - intersection
-    return (intersection + smooth) / (total + smooth)
-
-    # Dice Coefficient Metric
-def dice_coefficient(y_true, y_pred, smooth=1):
-    y_true_f = tf.reshape(tf.cast(y_true, tf.float32), [-1])
-    y_pred_f = tf.reshape(tf.cast(y_pred, tf.float32), [-1])
-
-    intersection = tf.reduce_sum(y_true_f * y_pred_f)
-
-    return (2. * intersection + smooth) / (tf.reduce_sum(y_true_f) + tf.reduce_sum(y_pred_f) + smooth)
-
-model = unet_with_attention(input_shape=(256, 256, 1))
-model.compile(optimizer='adam',
-              loss='binary_crossentropy',
-              metrics=['accuracy',dice_coefficient,jaccard_index])
-```
+### Attention Gate Structure
 
 <br />
+
+At the core of the project is the **Attention Gate**, which enables the network to focus on meaningful lung regions while suppressing irrelevant background features.
+
+```text
+theta_x = Conv2D(inter_channels, 1)(x)
+phi_g   = Conv2D(inter_channels, 1)(g)
+
+add_xg = Add()([theta_x, phi_g])
+psi    = Activation("sigmoid")(psi)
+
+attn_out = Multiply()([x, psi])
+```
+
+The encoder feature map `x` and decoder gating signal `g` are combined to generate an attention mask. This mask assigns higher weights to important anatomical structures and suppresses less relevant regions before feature fusion.
+
+<br />
+
+### Attention U-Net&#x20;
+
+<br />
+
+![](https://files.readme.io/d25f18b6463683c394aa37cf9f9633fb3f2515630a8e2f697b68e982aafbd662-Screenshot_2026-07-08_122629.png)
 
 > ### Showcasing The Result
 
