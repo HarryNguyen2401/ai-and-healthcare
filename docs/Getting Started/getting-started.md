@@ -160,8 +160,6 @@ An AG modulates the encoder features before fusion with the decoder features, su
 
 ![](https://files.readme.io/d01a50527b175e1f7127f8e49b3bc9163d1f2c754ba50c2c84585d9dca892d45-Anh_chup_Man_hinh_2026-07-02_luc_16.38.45.png)
 
-<br />
-
 ## Tested Dataset
 
 <br />
