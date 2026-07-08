@@ -212,8 +212,6 @@ The `kagglehub` package automatically downloads the dataset into the Colab envir
 
 ### Attention Gate Structure
 
-<br />
-
 At the core of the project is the **Attention Gate**, which enables the network to focus on meaningful lung regions while suppressing irrelevant background features.
 
 ```text
