@@ -55,9 +55,7 @@ This project builds upon several outstanding open-source resources, including:
 
 ***
 
-Something we’ve all seen before in the healthcare industry — **chest X-rays**. They’re fast, inexpensive, and available almost everywhere. That’s why, in many developing countries where advanced scanners like CT or MRI are rare, chest X-rays are often the only imaging tool doctors can rely on.
-
-Today, medical imaging stands at the core of modern healthcare. According to the _World Health Organization_, over 2 billion chest X-rays are taken every year. That makes them one of the most common diagnostic tests in the world — and one of the most powerful. From pneumonia and tuberculosis to lung cancer, these scans can literally make the difference between early treatment and a missed diagnosis.
+Chest X-rays are among the most widely used medical imaging techniques due to their speed, affordability, and accessibility. According to the _World Health Organization (WHO)_, more tha&#x6E;**&#x20;2 billion chest X-rays** are performed every year, making them an essential tool for diagnosing diseases such as tuberculosis, pneumonia, and lung cancer.&#x20;
 
 ![](https://files.readme.io/7d468dde11fbc295d2923c3ffbae8b4bb7c3cea116f2a09ba7d78b3b8663e85f-image.png)
 
@@ -71,13 +69,11 @@ Every year, nearly _four million people_ around the world lose their lives to lu
 
 <br />
 
-The motivation behind this project comes from a simple question — _how can we make lung diagnosis faster, fairer, and more consistent?_
+So, _how can we make lung diagnosis faster, fairer, and more consistent?_
 
 **AI provides an exciting answer.&#x20;**&#x49;n the face of these challenges, artificial intelligence has emerged as a powerful ally in transforming medical diagnostics. Rather than replacing radiologists, AI amplifies their capabilities, which makes healthcare faster, more consistent, and more accessible than ever before.
 
-It can process large volumes of chest X-rays within minutes, dramatically reducing diagnostic delays. Once trained, the system is cost-effective, making it a practical tool for smaller hospitals and rural clinics that lack specialized staff.&#x20;
-
-And most importantly, AI offers consistent accuracy: it highlights lung regions and subtle abnormalities that may go unnoticed by the human eye. Together, these strengths make AI not just a piece of technology, but a bridge connecting medical expertise to where it’s needed most.
+It can process large volumes of chest X-rays within minutes, dramatically reducing diagnostic delays. Once trained, the system is cost-effective, making it a practical tool for smaller hospitals and rural clinics that lack specialized staff. And most importantly, AI offers consistent accuracy: it highlights lung regions and subtle abnormalities that may go unnoticed by the human eye. Together, these strengths make AI not just a piece of technology, but a bridge connecting medical expertise to where it’s needed most.
 
 ![](https://files.readme.io/f933ee27cee745109d73e67d6a3a3a5cdf3312697697ae1495e600682d74a65e-Screenshot_2026-07-07_223319.png)
 
