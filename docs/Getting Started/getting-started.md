@@ -31,15 +31,14 @@ hidden: false
 
 ***
 
-![Python](https://img.shields.io/badge/Python-3.11-3776AB?style=for-the-badge\&logo=python\&logoColor=white)
-
-![Google Colab](https://img.shields.io/badge/Google-Colab-F9AB00?style=for-the-badge\&logo=googlecolab\&logoColor=white)
-
-![NumPy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge\&logo=numpy\&logoColor=white)
-
-![Matplotlib](https://img.shields.io/badge/Matplotlib-11557C?style=for-the-badge)
-
-<br />
+<HTMLBlock>{`
+<p>
+  <img src="https://img.shields.io/badge/Python-3.11-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Google-Colab-F9AB00?style=for-the-badge&logo=googlecolab&logoColor=white"/>
+  <img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Matplotlib-11557C?style=for-the-badge"/>
+</p>
+`}</HTMLBlock>
 
 This project builds upon several outstanding open-source resources, including:
 
@@ -328,7 +327,7 @@ While the segmentation results are generally precise, slight **oversegmentation*
 - [ ] Deploy as a web-based clinical decision support system.
 - [ ] Explore lightweight models for edge devices.
 
-
+<br />
 
 ![](https://files.readme.io/01ac03ca2ba50b6bc3b1124b1e660ee3cbe8f41c349f024613ea309710678c2f-Screenshot_2026-07-07_223319.png)
 
