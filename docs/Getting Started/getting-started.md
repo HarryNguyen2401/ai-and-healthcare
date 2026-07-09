@@ -314,18 +314,21 @@ While the segmentation results are generally precise, slight **oversegmentation*
 
 ![](https://files.readme.io/d1c9ccd547aa45d8633d57af9f08313f4b62a4b583754e6399233c050890e794-Screenshot_2026-07-07_223319.png)
 
-# :mag:Future Development
+# :rocket:Future Development
 
 ***
 
-**Looking ahead, there are several promising directions to further strengthen this model.**
+**Looking ahead, there are several promising directions to further strengthen this model:**
 
-- Integrate more chest X-ray datasets to improve robustness
-- Extend to multi-label classification & assessment
-- Visual explanation methods: improve model transparency & clinician trust
-- Model refinement to balance accuracy & efficiency
+- [ ] Expand training with NIH ChestX-ray14, CheXpert, and MIMIC-CXR.
+- [ ] Support multi-label thoracic disease classification.
+- [ ] Integrate Explainable AI (Grad-CAM, attention visualization).
+- [ ] Optimize Attention U-Net for faster inference.
+- [ ] Validate performance on external clinical datasets.
+- [ ] Deploy as a web-based clinical decision support system.
+- [ ] Explore lightweight models for edge devices.
 
-<br />
+
 
 ![](https://files.readme.io/01ac03ca2ba50b6bc3b1124b1e660ee3cbe8f41c349f024613ea309710678c2f-Screenshot_2026-07-07_223319.png)
 
