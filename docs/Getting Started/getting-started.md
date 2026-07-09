@@ -46,7 +46,7 @@ This project builds upon several outstanding open-source resources, including:
 - Attention U-Net
 - Montgomery County Chest X-ray Dataset
 - Shenzhen Hospital Chest X-ray Dataset
-- Kaggle
+- KaggleHub
 
 ![](https://files.readme.io/74e363cab33857cbf033f8b4fbb842e1f39902edf2feac41f5d072994fc6eaf8-Screenshot_2026-07-07_223319.png)
 
