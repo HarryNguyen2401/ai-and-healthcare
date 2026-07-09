@@ -20,12 +20,10 @@ hidden: false
 - Attention Integration in U-Net
 - Our Method
 - Code Demo
-- Result & Conclusion
+- Result & Evaluation
 - Future Development
 
 ![](https://files.readme.io/c9d1802a9e23ead1ba5fb12c37992c4465cec8882928095ee17fa17ac283d130-Screenshot_2026-07-07_223319.png)
-
-<br />
 
 # :file_folder: Prerequisites
 
@@ -292,13 +290,13 @@ plt.imshow(pred)
 
 ![](https://files.readme.io/162749768ab6887df0b9ae923b7e1dd0cf0550d45b10c502afde4c3b81062ad5-Screenshot_2026-07-07_223319.png)
 
-# :page_with_curl:Result & Conclusion
+# :page_with_curl:Result & Evaluation
 
 ***
 
 > ### Plot Training & Validation Loss Values
 
-![](https://files.readme.io/44c70187654532c300b9d08268ccd9ac0275df736688dd3535a6165c5df1c699-Anh_chup_Man_hinh_2026-07-02_luc_17.11.01.png)
+![](https://files.readme.io/55d57aa69c61267a69db7bfe8eb2a6ce3029d3f4eff2d78e6132fc60d880e2c7-image.png)
 
 The model demonstrates a strong capability in accurately segmenting lung regions from chest X-ray images. It achieves consistently high performance, with Dice coefficient, Jaccard index, and accuracy values of around 0.9, indicating close alignment between predicted and true lung areas.
 
