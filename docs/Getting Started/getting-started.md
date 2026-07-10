@@ -25,6 +25,14 @@ hidden: false
 
 ![](https://files.readme.io/39818be11aebdd701f5116d37e77161c4d7451e2ecd43ede97632fae5d236cb7-Screenshot_2026-07-07_223319.png)
 
+# About Project
+
+***
+
+<br />
+
+<br />
+
 # :file_folder: Prerequisites
 
 ***
