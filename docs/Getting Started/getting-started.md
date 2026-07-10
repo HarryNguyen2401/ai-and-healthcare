@@ -24,7 +24,13 @@ hidden: false
 
 This project explores how deep learning can improve lung segmentation in chest X-ray images to support faster and more consistent medical diagnosis. Using an Attention U-Net architecture implemented in TensorFlow/Keras, the system automatically identifies lung regions from chest radiographs. The project focuses on improving segmentation accuracy while maintaining computational efficiency, demonstrating the potential of AI-assisted medical imaging for future clinical applications.
 
-<br />
+<Callout icon="far fa-circle-exclamation" theme="info">
+  ### Note
+
+  The proposed model is a prototype developed as part of the research program and **is not intended for clinical diagnosis or medical decision-making**.
+</Callout>
+
+![](https://files.readme.io/64b3f178d7ba2cc2c44ab2a113948af69dd96e8cbc2fdbe1afe9a1e7be92910d-gray_line.png)
 
 # :file_folder: Prerequisites
 
@@ -125,8 +131,6 @@ An AG modulates the encoder features before fusion with the decoder features, su
 1. High variability in organ morphology (e.g., pancreas, retinal vessels).&#x20;
 2. Low contrast between anatomical structures and background.
 3. The computational and design burden of multi-stage or cascaded segmentation pipelines.
-
-<br />
 
 ### Why is attention needed in the U-Net?
 
