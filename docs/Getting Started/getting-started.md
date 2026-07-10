@@ -162,8 +162,6 @@ An AG modulates the encoder features before fusion with the decoder features, su
 
 ## Tested Dataset
 
-<br />
-
 <Callout icon="⚠️" theme="info">
   ### IMPORTANT!
 
@@ -171,8 +169,6 @@ An AG modulates the encoder features before fusion with the decoder features, su
 
   Please refer to the original dataset source before downloading or reusing the data: [Chest X-ray Dataset for Tuberculosis Segmentation](https://www.kaggle.com/datasets/iamtapendu/chest-x-ray-lungs-segmentation)
 </Callout>
-
-<br />
 
 > _This dataset consists of&#x20;_**_704 chest X-ray images_**_&#x20;that have been curated from two sources: the&#x20;_**_Montgomery County Chest X-ray Database_**_&#x20;(USA) and the&#x20;_**_Shenzhen Chest X-ray Database_**_&#x20;(China). The images are used for training and evaluating machine learning models for&#x20;_**_tuberculosis (TB) detection._**
 >
@@ -298,7 +294,22 @@ plt.imshow(pred)
 
 ![](https://files.readme.io/55d57aa69c61267a69db7bfe8eb2a6ce3029d3f4eff2d78e6132fc60d880e2c7-image.png)
 
-The model demonstrates a strong capability in accurately segmenting lung regions from chest X-ray images. It achieves consistently high performance, with Dice coefficient, Jaccard index, and accuracy values of around 0.9, indicating close alignment between predicted and true lung areas.
+| Metrics             | Observation                                                                                                                                                                                                                        |
+| ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Loss                | Training loss decreased steadily after the first few epochs, indicating successful optimization. Validation loss fluctuated considerably due to the relatively small dataset but gradually stabilized towards the end of training. |
+| Accuracy            | Training accuracy remained consistently high (**≈0.98**), while validation accuracy improved progressively and reached approximately **0.85**, showing that the model learned meaningful segmentation features.                    |
+| Dice Coefficient    | Converged around **0.94**, demonstrating strong overlap between predicted and ground-truth lung masks. Validation Dice improved during later epochs despite early instability.                                                     |
+| Jaccard Index (IoU) | Similar trends were observed for IoU. Training performance remained stable (**\~0.90**), while validation scores increased after additional training epochs, suggesting better generalization.                                     |
+
+### Performance Summary
+
+![](https://files.readme.io/e8a6faf99ed340e5c26935fcadf3dff8d4ac410461f401ad47920cf717ec49f3-Screenshot_2026-07-10_102921.png)
+
+**_⚠️ Validation metrics vary between epochs because the dataset is relatively small and contains images collected from different hospitals with varying resolutions and imaging conditions._**
+
+![](https://files.readme.io/d5912ebf661d905f07939058e19c2a72ed6cbf7dc939dbabe2352762e07223cd-Screenshot_2026-07-08_122629.png)
+
+<br />
 
 > ### Model Predictions
 
@@ -310,7 +321,25 @@ The model demonstrates a strong capability in accurately segmenting lung regions
 
 ![](https://files.readme.io/86127714e1a056d8bcac3101aed31047a84695f5586d0c17fc51081f20308366-Anh_chup_Man_hinh_2026-07-02_luc_17.14.27.png)
 
-While the segmentation results are generally precise, slight **oversegmentation** can be noticed along the lung boundaries, which suggests that the model occasionally includes small non-lung regions. This issue could be reduced through post-processing steps, such as morphological filtering or boundary refinement.
+### Key Observations
+
+- **Overall Segmentation Quality**: The predicted masks closely follow the overall shape of the lungs.<br />Most anatomical structures are successfully identified with consistent left–right symmetry.
+- **Boundary Preservation**: The model captures the upper, lower, and lateral lung contours reasonably well. Fine anatomical details are largely preserved through the encoder–decoder architecture and skip connections.
+- **Attention Mechanism**: Attention Gates help the model concentrate on lung tissue while suppressing less relevant background structures. This enables cleaner segmentation compared with a standard U-Net in many challenging regions.
+
+### Typical Prediction Errors
+
+> Although the overall segmentation quality is strong, several limitations can still be observed.
+
+- Slight over-segmentation appears around the lung boundaries, where nearby soft tissue or background pixels are occasionally included.
+- Small regions near the diaphragm and mediastinum remain difficult to distinguish because their intensity is similar to surrounding anatomical structures.
+- Prediction quality varies slightly across patients with different image resolutions or disease severity.
+
+### **Interpretation**
+
+The qualitative results demonstrate that the **Attention U-Net** successfully learns the global structure of the lungs while maintaining good pixel-level localization. The predicted masks generally align well with the expert annotations, indicating that the model captures the primary lung regions with high consistency.
+
+Although minor boundary inaccuracies remain, these errors are relatively small compared with the overall segmented area. Additional post-processing techniques, larger training datasets, and longer training schedules could further refine lung boundaries and improve prediction accuracy.
 
 ![](https://files.readme.io/d1c9ccd547aa45d8633d57af9f08313f4b62a4b583754e6399233c050890e794-Screenshot_2026-07-07_223319.png)
 
