@@ -1,13 +1,5 @@
 ---
 title: AI In The Journey To Healthier Lungs
-excerpt: >-
-  This project explores how deep learning can improve lung segmentation in chest
-  X-ray images to support faster and more consistent medical diagnosis. Using an
-  Attention U-Net architecture implemented in TensorFlow/Keras, the system
-  automatically identifies lung regions from chest radiographs. The project
-  focuses on improving segmentation accuracy while maintaining computational
-  efficiency, demonstrating the potential of AI-assisted medical imaging for
-  future clinical applications.
 hidden: false
 ---
 # :book: Table of Contents
@@ -26,11 +18,11 @@ hidden: false
 
 ![](https://files.readme.io/39818be11aebdd701f5116d37e77161c4d7451e2ecd43ede97632fae5d236cb7-Screenshot_2026-07-07_223319.png)
 
-# About Project
+# :package:About Project
 
 ***
 
-<br />
+This project explores how deep learning can improve lung segmentation in chest X-ray images to support faster and more consistent medical diagnosis. Using an Attention U-Net architecture implemented in TensorFlow/Keras, the system automatically identifies lung regions from chest radiographs. The project focuses on improving segmentation accuracy while maintaining computational efficiency, demonstrating the potential of AI-assisted medical imaging for future clinical applications.
 
 <br />
 
