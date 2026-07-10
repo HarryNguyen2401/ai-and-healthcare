@@ -161,6 +161,21 @@ An AG modulates the encoder features before fusion with the decoder features, su
 - **Frameworks**: TensorFlow / Keras
 - **Loss & Metrics**: Binary Crossentropy, Dice Coefficient, Jaccard Index
 
+<Cards>
+  <Card title="Getting Started" icon="fa-rocket">
+    New to our platform? Follow this guide to get started.
+  </Card>
+
+  <Card title="API Reference" icon="fa-code">
+    Explore our interactive API reference.
+  </Card>
+
+  <Card title="Support & Community" icon="fa-comments" target="_blank">
+    Join our community or checkout our FAQ.
+  </Card>
+</Cards>
+
+
 ## Pipeline
 
 ![](https://files.readme.io/d01a50527b175e1f7127f8e49b3bc9163d1f2c754ba50c2c84585d9dca892d45-Anh_chup_Man_hinh_2026-07-02_luc_16.38.45.png)
