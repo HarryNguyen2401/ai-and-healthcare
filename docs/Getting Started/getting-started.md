@@ -27,7 +27,7 @@ This project explores how deep learning can improve lung segmentation in chest X
 <Callout icon="far fa-circle-exclamation" theme="info">
   ### Note
 
-  The proposed model is a prototype developed as part of the research program and **is not intended for clinical diagnosis or medical decision-making**.
+  The proposed model is a prototype developed as part of the research program and **is not intended for official uses, such as clinical diagnosis or medical decision-making**.
 </Callout>
 
 ![](https://files.readme.io/64b3f178d7ba2cc2c44ab2a113948af69dd96e8cbc2fdbe1afe9a1e7be92910d-gray_line.png)
@@ -64,9 +64,9 @@ This project builds upon several outstanding open-source resources, including:
 
 Chest X-rays are among the most widely used medical imaging techniques due to their speed, affordability, and accessibility. According to the _World Health Organization (WHO)_, more tha&#x6E;**&#x20;2 billion chest X-rays** are performed every year, making them an essential tool for diagnosing diseases such as tuberculosis, pneumonia, and lung cancer.&#x20;
 
-![](https://files.readme.io/7d468dde11fbc295d2923c3ffbae8b4bb7c3cea116f2a09ba7d78b3b8663e85f-image.png)
 
-<br />
+<Image src="https://files.readme.io/7092fa21265649b185e64f1e94db7063e41b557a5762b8884b67747da3fbf2c2-image.png" framed={true} />
+
 
 But here’s the challenge: reading X-rays images accurately _isn’t an easy task_. Even when X-rays are available, the early signs of disease can be so faint, so easy to miss, that they quietly escape notice. As a result, when early signs go unseen, the consequences can be devastating.
 
@@ -161,68 +161,11 @@ An AG modulates the encoder features before fusion with the decoder features, su
 - **Frameworks**: TensorFlow / Keras
 - **Optimization & Evaluation**: Binary Crossentropy, Dice Coefficient, Jaccard Index
 
-<HTMLBlock>{`
-<h2>⚙️ Setup</h2>
-
-<table>
-<tr>
-
-<td width="50%">
-
-### 🐍 Language
-
-# Python 3.11
-
-Primary development language
-
-</td>
-
-<td width="50%">
-
-### 💻 Environment
-
-# Google Colab
-
-GPU-enabled training
-
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-
-### 📦 Framework
-
-# TensorFlow / Keras
-
-Deep learning implementation
-
-</td>
-
-<td>
-
-### 📈 Evaluation
-
-# BCE + Dice + IoU
-
-Binary Crossentropy • Dice • Jaccard
-
-</td>
-
-</tr>
-
-</table>
-`}</HTMLBlock>
-
 ## Pipeline
 
-![](https://files.readme.io/d01a50527b175e1f7127f8e49b3bc9163d1f2c754ba50c2c84585d9dca892d45-Anh_chup_Man_hinh_2026-07-02_luc_16.38.45.png)
 
-<br />
+<Image src="https://files.readme.io/323c6ee2c489bda14f5650dfc29d48f688f0323f9284447d8ede25d34f8276c1-image.png" border={true} framed={true} />
 
-<br />
 
 ## Tested Dataset
 
@@ -239,8 +182,6 @@ Binary Crossentropy • Dice • Jaccard
 > _The dataset contains both&#x20;_**_tuberculosis-positive_**_&#x20;and&#x20;_**_normal&#x20;_**_chest X-rays, along with demographic details such as&#x20;_**_gender, age_**_, and&#x20;_**_county_**_&#x20;of origin. The images are accompanied by&#x20;_**_lung segmentation masks_**_&#x20;and&#x20;_**_clinical metadata_**_, which makes the dataset highly suitable for deep learning applications in medical imaging._
 
 ![](https://files.readme.io/1d80197b5b4b8f336ae966ca928c47d5a55a9480d59812409c762be2d1d2882b-Anh_chup_Man_hinh_2026-07-07_luc_10.15.05.png)
-
-<br />
 
 ![](https://files.readme.io/35cbd8e088f5c35f1293c2e28a2e670a7d77511ff6e9b350ad902789b70f5051-Screenshot_2026-07-07_223319.png)
 
@@ -265,8 +206,6 @@ dataset_path = kagglehub.dataset_download(
 The `kagglehub` package automatically downloads the dataset into the Colab environment, while `tensorflow` and `keras` provide the core framework for building and training the segmentation model.
 
 ![](https://files.readme.io/06bcdfc58a098eea9bf9a65112406b6ad6be25dc93a67bad7a7edb3b4a8f6977-Screenshot_2026-07-08_122629.png)
-
-<br />
 
 > ### Building The Model
 
@@ -314,8 +253,6 @@ The `decoder_block()` combines **skip connections** with **Attention Gates**, al
 
 ![](https://files.readme.io/d25f18b6463683c394aa37cf9f9633fb3f2515630a8e2f697b68e982aafbd662-Screenshot_2026-07-08_122629.png)
 
-<br />
-
 > ### Running Inference
 
 After training, the model predicts a binary lung mask for each chest X-ray image.
@@ -330,8 +267,6 @@ pred = cv2.cvtColor(pred, cv2.COLOR_GRAY2RGB)
 The predicted segmentation mask is generated using `model.predict()`, then converted into a visualization-friendly format for comparison with the original image and the ground-truth annotation.
 
 ![](https://files.readme.io/38ab92d86b76f0ba966a9e6aacffaaaaeafdbe9a03266f25cb2942b7831e7a0a-Screenshot_2026-07-08_122629.png)
-
-<br />
 
 > ### Visualizing the Results
 
@@ -372,8 +307,6 @@ plt.imshow(pred)
 **_⚠️ Validation metrics vary between epochs because the dataset is relatively small and contains images collected from different hospitals with varying resolutions and imaging conditions._**
 
 ![](https://files.readme.io/d5912ebf661d905f07939058e19c2a72ed6cbf7dc939dbabe2352762e07223cd-Screenshot_2026-07-08_122629.png)
-
-<br />
 
 > ### Model Predictions
 
