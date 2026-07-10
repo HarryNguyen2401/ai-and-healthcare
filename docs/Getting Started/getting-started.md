@@ -1,5 +1,5 @@
 ---
-title: AI In The Journey To Healthier Lungs
+title: Lung Abnormalities Detector AI Model
 hidden: false
 ---
 # :book: Table of Contents
@@ -68,19 +68,24 @@ Chest X-rays are among the most widely used medical imaging techniques due to th
 <Image src="https://files.readme.io/7092fa21265649b185e64f1e94db7063e41b557a5762b8884b67747da3fbf2c2-image.png" framed={true} />
 
 
-But here’s the challenge: reading X-rays images accurately _isn’t an easy task_. Even when X-rays are available, the early signs of disease can be so faint, so easy to miss, that they quietly escape notice. As a result, when early signs go unseen, the consequences can be devastating.
-
-Every year, nearly _four million people_ around the world lose their lives to lung diseases; many of which could have been prevented with early detection. Yet, in countless hospitals, radiologists face overwhelming workloads, while in some remote regions, there may be only one specialist for thousands of patients. The result is a silent crisis: delays in diagnosis, missed opportunities for treatment, and lives that could have been saved.
+Despite their widespread use, however, accurately interpreting chest X-rays remains challenging. Early-stage abnormalities are often subtle and can be overlooked, while many healthcare systems continue to face shortages of experienced radiologists. These factors may lead to delayed diagnosis and reduced treatment effectiveness.
 
 ![](https://files.readme.io/adf180c29c38c529a49668a94f14f34d242c27f4a3f6bc8c689f5635c7fd6b8c-Screenshot_2026-06-30_153914.png)
 
-<br />
+So, _how can we make lung diagnosis faster, fairer, and more consistent?&#x20;_**AI provides an exciting answer.&#x20;**
 
-So, _how can we make lung diagnosis faster, fairer, and more consistent?_
+### :bulb:Why AI?
 
-**AI provides an exciting answer.&#x20;**&#x49;n the face of these challenges, artificial intelligence has emerged as a powerful ally in transforming medical diagnostics. Rather than replacing radiologists, AI amplifies their capabilities, which makes healthcare faster, more consistent, and more accessible than ever before.
+> **How can we make lung diagnosis faster, more consistent, and more accessible?**
 
-It can process large volumes of chest X-rays within minutes, dramatically reducing diagnostic delays. Once trained, the system is cost-effective, making it a practical tool for smaller hospitals and rural clinics that lack specialized staff. And most importantly, AI offers consistent accuracy: it highlights lung regions and subtle abnormalities that may go unnoticed by the human eye. Together, these strengths make AI not just a piece of technology, but a bridge connecting medical expertise to where it’s needed most.
+Artificial intelligence provides a practical solution by assisting clinicians rather than replacing them. AI models can automatically analyze chest X-rays, highlight lung regions, and support more reliable interpretation.
+
+Key advantages include:
+
+⚡ Faster analysis by processing large numbers of X-ray images within seconds.
+🎯 More consistent segmentation through automated detection of lung regions.
+🏥 Improved accessibility for hospitals and clinics with limited radiology expertise.
+🤝 Clinical decision support by serving as a reliable second opinion for physicians.
 
 ![](https://files.readme.io/f933ee27cee745109d73e67d6a3a3a5cdf3312697697ae1495e600682d74a65e-Screenshot_2026-07-07_223319.png)
 
