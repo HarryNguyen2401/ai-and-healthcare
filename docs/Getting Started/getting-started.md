@@ -175,7 +175,6 @@ An AG modulates the encoder features before fusion with the decoder features, su
   </Card>
 </Cards>
 
-
 ## Pipeline
 
 ![](https://files.readme.io/d01a50527b175e1f7127f8e49b3bc9163d1f2c754ba50c2c84585d9dca892d45-Anh_chup_Man_hinh_2026-07-02_luc_16.38.45.png)
@@ -354,12 +353,6 @@ plt.imshow(pred)
 - Slight over-segmentation appears around the lung boundaries, where nearby soft tissue or background pixels are occasionally included.
 - Small regions near the diaphragm and mediastinum remain difficult to distinguish because their intensity is similar to surrounding anatomical structures.
 - Prediction quality varies slightly across patients with different image resolutions or disease severity.
-
-### **Interpretation**
-
-The qualitative results demonstrate that the **Attention U-Net** successfully learns the global structure of the lungs while maintaining good pixel-level localization. The predicted masks generally align well with the expert annotations, indicating that the model captures the primary lung regions with high consistency.
-
-Although minor boundary inaccuracies remain, these errors are relatively small compared with the overall segmented area. Additional post-processing techniques, larger training datasets, and longer training schedules could further refine lung boundaries and improve prediction accuracy.
 
 ![](https://files.readme.io/d1c9ccd547aa45d8633d57af9f08313f4b62a4b583754e6399233c050890e794-Screenshot_2026-07-07_223319.png)
 
