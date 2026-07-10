@@ -14,16 +14,16 @@ hidden: false
 
 ***
 
-- Problem Statement & Motivation
-- Prerequisites
-- U-Net Model
-- Attention Integration in U-Net
-- Our Method
-- Code Demo
-- Result & Evaluation
-- Future Development
+- [Prerequisites](#Prerequisites)
+- [Problem Statement & Motivation](<# Problem Statement--Motivation>)
+- [U-Net Model](<#U-Net Model>)
+- [Attention Integration in U-Net](<#Attention Integration in U-Net>)
+- [Our Method](<#Our Method>)
+- [Code Demo](<#Code Demo>)
+- [Future Development](<#Future Development>)
+- [Credits](#Credits)
 
-![](https://files.readme.io/c9d1802a9e23ead1ba5fb12c37992c4465cec8882928095ee17fa17ac283d130-Screenshot_2026-07-07_223319.png)
+![](https://files.readme.io/39818be11aebdd701f5116d37e77161c4d7451e2ecd43ede97632fae5d236cb7-Screenshot_2026-07-07_223319.png)
 
 # :file_folder: Prerequisites
 
