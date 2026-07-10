@@ -14,14 +14,16 @@ hidden: false
 
 ***
 
-- [Prerequisites](#Prerequisites)
-- [Problem Statement & Motivation](<# Problem Statement--Motivation>)
-- [U-Net Model](<#U-Net Model>)
-- [Attention Integration in U-Net](<#Attention Integration in U-Net>)
-- [Our Method](<#Our Method>)
-- [Code Demo](<#Code Demo>)
-- [Future Development](<#Future Development>)
-- [Credits](#Credits)
+- [About Project](<#About Project>)
+
+* [Prerequisites](#Prerequisites)
+* [Problem Statement & Motivation](<# Problem Statement--Motivation>)
+* [U-Net Model](<#U-Net Model>)
+* [Attention Integration in U-Net](<#Attention Integration in U-Net>)
+* [Our Method](<#Our Method>)
+* [Code Demo](<#Code Demo>)
+* [Future Development](<#Future Development>)
+* [Credits](#Credits)
 
 ![](https://files.readme.io/39818be11aebdd701f5116d37e77161c4d7451e2ecd43ede97632fae5d236cb7-Screenshot_2026-07-07_223319.png)
 
