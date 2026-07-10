@@ -159,25 +159,70 @@ An AG modulates the encoder features before fusion with the decoder features, su
 - **Language**: Python
 - **Environment**: Google Colab (GPU-enabled)
 - **Frameworks**: TensorFlow / Keras
-- **Loss & Metrics**: Binary Crossentropy, Dice Coefficient, Jaccard Index
+- **Optimization & Evaluation**: Binary Crossentropy, Dice Coefficient, Jaccard Index
 
-<Cards>
-  <Card title="Getting Started" icon="fa-rocket">
-    New to our platform? Follow this guide to get started.
-  </Card>
+<HTMLBlock>{`
+<h2>⚙️ Setup</h2>
 
-  <Card title="API Reference" icon="fa-code">
-    Explore our interactive API reference.
-  </Card>
+<table>
+<tr>
 
-  <Card title="Support & Community" icon="fa-comments" target="_blank">
-    Join our community or checkout our FAQ.
-  </Card>
-</Cards>
+<td width="50%">
+
+### 🐍 Language
+
+# Python 3.11
+
+Primary development language
+
+</td>
+
+<td width="50%">
+
+### 💻 Environment
+
+# Google Colab
+
+GPU-enabled training
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+### 📦 Framework
+
+# TensorFlow / Keras
+
+Deep learning implementation
+
+</td>
+
+<td>
+
+### 📈 Evaluation
+
+# BCE + Dice + IoU
+
+Binary Crossentropy • Dice • Jaccard
+
+</td>
+
+</tr>
+
+</table>
+`}</HTMLBlock>
 
 ## Pipeline
 
 ![](https://files.readme.io/d01a50527b175e1f7127f8e49b3bc9163d1f2c754ba50c2c84585d9dca892d45-Anh_chup_Man_hinh_2026-07-02_luc_16.38.45.png)
+
+<br />
+
+<br />
 
 ## Tested Dataset
 
