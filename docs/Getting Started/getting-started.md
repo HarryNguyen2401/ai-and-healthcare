@@ -347,14 +347,22 @@ The comparison is generated with `plt.subplot()` and `plt.imshow()`, presenting 
 
 - [ ] Expand training with NIH ChestX-ray14, CheXpert, and MIMIC-CXR.
 - [ ] Support multi-label thoracic disease classification.
-- [ ] Integrate Explainable AI (Grad-CAM, attention visualization).
+
+
 - [ ] Optimize Attention U-Net for faster inference.
 - [ ] Validate performance on external clinical datasets.
-- [ ] Deploy as a web-based clinical decision support system.
 
 
 
-<br />
+| Stage                          |    Status   | Description                        |
+| ------------------------------ | :---------: | ---------------------------------- |
+| Dataset Preparation            | ✅ Completed | Data collection and preprocessing  |
+| Attention U-Net Implementation | ✅ Completed | Training and evaluation            |
+| Experimental Analysis          | ✅ Completed | Dice, IoU, Accuracy comparison     |
+| Explainable AI                 |  🟡 Planned | Grad-CAM & attention visualization |
+| Multi-disease Segmentation     |  🟡 Planned | Beyond lung masks                  |
+| Clinical Validation            |  🔵 Future  | External dataset evaluation        |
+| Web Deployment                 |  🔵 Future  | Interactive inference demo         |
 
 ![](https://files.readme.io/01ac03ca2ba50b6bc3b1124b1e660ee3cbe8f41c349f024613ea309710678c2f-Screenshot_2026-07-07_223319.png)
 
