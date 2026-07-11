@@ -351,7 +351,8 @@ The comparison is generated with `plt.subplot()` and `plt.imshow()`, presenting 
 - [ ] Optimize Attention U-Net for faster inference.
 - [ ] Validate performance on external clinical datasets.
 - [ ] Deploy as a web-based clinical decision support system.
-- [ ] Explore lightweight models for edge devices.
+
+
 
 <br />
 
