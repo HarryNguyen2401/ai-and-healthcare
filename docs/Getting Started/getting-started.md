@@ -275,8 +275,6 @@ The predicted segmentation mask is generated using `model.predict()`, then conve
 
 > ### Visualizing the Results
 
-Finally, the original image, ground-truth mask, and predicted mask are displayed side by side for qualitative evaluation.
-
 ```text
 plt.subplot(131)
 plt.imshow(img)
@@ -288,7 +286,7 @@ plt.subplot(133)
 plt.imshow(pred)
 ```
 
-<br />
+The comparison is generated with `plt.subplot()` and `plt.imshow()`, presenting the original X-ray, ground-truth mask, and predicted mask in a single figure. This side-by-side visualization allows readers to quickly inspect segmentation quality and identify areas where the model performs well or requires further refinement.
 
 ![](https://files.readme.io/162749768ab6887df0b9ae923b7e1dd0cf0550d45b10c502afde4c3b81062ad5-Screenshot_2026-07-07_223319.png)
 
