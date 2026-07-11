@@ -10,7 +10,7 @@ hidden: true
 - [:file_folder: Prerequisites](#-prerequisites)
 - [:herb: Problem Statement & Motivation](#problem-statement--motivation)
 - [:robot: U-Net Model ](#-u-net-model-)
-- [:brain: Attention Integration in U-Net](#attention-integration-in-u-net)
+- [:brain: Attention Integration in U-Net](#-attention-integration-in-u-net)
 - [:wrench: Our Method](#our-method)
 - [:computer: Code Demo](#code-demo)
 - [:rocket: Future Development](#future-development)
