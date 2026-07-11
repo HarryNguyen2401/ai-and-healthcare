@@ -7,7 +7,7 @@ hidden: true
 ***
 
 - [:floppy_disk: About Project](#-about-project)&#x20;
-- [:file_folder: Prerequisites](#prerequisites)
+- [:file_folder: Prerequisites](#-prerequisites)
 - [:herb: Problem Statement & Motivation](#problem-statement--motivation)
 - [:robot: U-Net Model ](#u-net-model)
 - [:brain: Attention Integration in U-Net](#attention-integration-in-u-net)
