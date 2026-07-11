@@ -80,7 +80,7 @@ So, _how can we make lung diagnosis faster, fairer, and more consistent?&#x20;_*
 
 Artificial intelligence provides a practical solution by assisting clinicians rather than replacing them. AI models can automatically analyze chest X-rays, highlight lung regions, and support more reliable interpretation.
 
-Key advantages include:
+**Key advantages include:**
 
 ⚡ Faster analysis by processing large numbers of X-ray images within seconds.
 🎯 More consistent segmentation through automated detection of lung regions.
@@ -287,6 +287,8 @@ plt.imshow(msk)
 plt.subplot(133)
 plt.imshow(pred)
 ```
+
+<br />
 
 ![](https://files.readme.io/162749768ab6887df0b9ae923b7e1dd0cf0550d45b10c502afde4c3b81062ad5-Screenshot_2026-07-07_223319.png)
 
