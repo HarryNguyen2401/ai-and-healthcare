@@ -6,15 +6,15 @@ hidden: true
 
 ***
 
-- [:floppy_disk: About Project](<#About Project>)
-- [:file_folder: Prerequisites](#Prerequisites)
-- [:herb: Problem Statement & Motivation](<# Problem Statement--Motivation>)
-- [:robot: U-Net Model ](<#U-Net Model>)
-- [:brain: Attention Integration in U-Net](<#Attention Integration in U-Net>)
-- [:wrench: Our Method](<#Our Method>)
-- [:computer: Code Demo](<#Code Demo>)
-- [:rocket: Future Development](<#Future Development>)
-- [:handshake: Credits](#Credits)
+- [:floppy_disk: About Project](#about-project)&#x20;
+- [:file_folder: Prerequisites](#prerequisites)
+- [:herb: Problem Statement & Motivation](#problem-statement--motivation)
+- [:robot: U-Net Model ](#u-net-model)
+- [:brain: Attention Integration in U-Net](#attention-integration-in-u-net)
+- [:wrench: Our Method](#our-method)
+- [:computer: Code Demo](#code-demo)
+- [:rocket: Future Development](#future-development)
+- [:handshake: Credits](#credits)
 
 ![](https://files.readme.io/39818be11aebdd701f5116d37e77161c4d7451e2ecd43ede97632fae5d236cb7-Screenshot_2026-07-07_223319.png)
 
