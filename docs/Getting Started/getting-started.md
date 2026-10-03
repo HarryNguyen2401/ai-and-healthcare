@@ -1,6 +1,6 @@
 ---
 title: Lung Abnormalities Detector AI Model
-hidden: false
+hidden: true
 ---
 # :book: Table of Contents
 
